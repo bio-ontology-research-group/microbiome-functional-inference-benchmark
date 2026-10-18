@@ -1,12 +1,25 @@
 # Functional-inference benchmark metrics
 
-Reusable Python functions and complete notebooks for comparing WGS functional
-profiles with PICRUSt2, PICRUSt2 plus a basic-MLP adaptation, and Tax4Fun2.
+This repository consolidates metrics used to benchmark methods that predict
+microbial community functional profiles from amplicon profiles. Its purpose is
+to bring established evaluation approaches into one reproducible place,
+document what each metric compares, and demonstrate their use against paired
+WGS functional profiles. It contains tested metric implementations,
+paper-inspired plotting functions, compact processed benchmark inputs, and
+executed multi-study notebooks. The current benchmark examples compare
+PICRUSt2, PICRUSt2 plus a basic-MLP adaptation, and Tax4Fun2.
 
-The repository is intended to be cloned and explored directly. The two
-notebooks are the primary usage guides: they call the same metric and plotting
-functions available under `src/picrust_benchmark_metrics/` and compare their
-outputs with completed benchmark results.
+The first notebook brings together established profile-level and
+biological-group benchmarking approaches from the reference literature. The
+second notebook develops additional diagnostics from this project to examine
+the same predictions in greater depth: the relationship between observed and
+predicted biological effects, directional ROC and precision-recall behavior,
+and the composition of observed outcomes across prediction-ranked deciles.
+These views help reveal what a summary metric is actually rewarding, where a
+method succeeds or fails, and whether its apparent performance supports the
+biological question being asked. The goal is to help users interpret the
+metrics and choose an evaluation strategy deliberately, rather than select a
+score without understanding the behavior behind it.
 
 ## Install and run
 
