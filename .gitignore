@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.matplotlib_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+.venv/
+
+# Keep compact processed benchmark inputs; exclude local/raw working data.
+data/raw/
+data/private/
+figures/

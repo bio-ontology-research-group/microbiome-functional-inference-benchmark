@@ -1,0 +1,7 @@
+surface_id	method_order	arm	method	n_groups	n_strata	n_samples	n_seeds	pooled_sample_mean_spearman	mean_of_study_means
+PRIMARY_all_six_23group	1	native_picrust2	PICRUSt2	23	26	1639	0	0.6403171724714296	0.6490001043667314
+PRIMARY_all_six_23group	2	otu_taxa_e3	OTU-Taxa	23	26	1639	1	0.6370593545814768	0.6453159634471816
+PRIMARY_all_six_23group	3	picrust2_teacher_only_residual	PICRUSt2 + adaptation	23	26	1639	1	0.6573390242989444	0.680558217903237
+PRIMARY_all_six_23group	4	picrust2_teacher_embedding_residual	PICRUSt2 + OTU-Taxa	23	26	1639	1	0.6469457016303184	0.6714421447455677
+PRIMARY_all_six_23group	5	contextual_r3_sample_ko_residual	R3 sample-KO residual	23	26	1639	1	0.6385972333868016	0.6446729199779943
+PRIMARY_all_six_23group	6	dg_reference_anchored_mixture	D/G reference-anchored mixture	23	26	1639	1	0.6516777524957795	0.6683449898115505

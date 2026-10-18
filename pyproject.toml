@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "picrust-benchmark-metrics"
+version = "0.1.0"
+description = "Reusable metrics and plots for paired functional-inference benchmarks."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy", "pandas", "scipy", "scikit-learn", "matplotlib", "seaborn"]
+
+[project.optional-dependencies]
+notebooks = ["jupyter", "nbconvert", "nbformat"]
+dev = ["pytest", "jupyter", "nbconvert", "nbformat"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

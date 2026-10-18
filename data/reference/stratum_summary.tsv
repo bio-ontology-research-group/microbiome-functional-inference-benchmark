@@ -1,0 +1,157 @@
+surface_id	dataset	heldout_group	display_name	method_order	method_label	arm	n_samples	mean_sample_spearman	sd_sample_spearman	n_wgs_universe_kos	n_model_head_kos	n_seeds	mean_seed_specific_sd
+PRIMARY_all_six_23group	activated_sludge	activated_sludge	Activated sludge	1	PICRUSt2	native_picrust2	60	0.6915712047764409	0.02703678739682441	7469	9634	0	0.02703678739682441
+PRIMARY_all_six_23group	activated_sludge	activated_sludge	Activated sludge	2	OTU-Taxa	otu_taxa_e3	60	0.7985135769028022	0.030756664847565465	7469	17283	1	0.030756664847565465
+PRIMARY_all_six_23group	activated_sludge	activated_sludge	Activated sludge	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	60	0.7919214214233826	0.022591302738792386	7469	17283	1	0.022591302738792386
+PRIMARY_all_six_23group	activated_sludge	activated_sludge	Activated sludge	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	60	0.7658709665602558	0.024003990894838595	7469	17283	1	0.024003990894838595
+PRIMARY_all_six_23group	activated_sludge	activated_sludge	Activated sludge	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	60	0.703416733645856	0.032294148288284495	7469	17283	1	0.032294148288284495
+PRIMARY_all_six_23group	activated_sludge	activated_sludge	Activated sludge	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	60	0.7576671383781644	0.027979048304171316	7469	17283	1	0.027979048304171316
+PRIMARY_all_six_23group	bioreactor	bioreactor	Bioreactor	1	PICRUSt2	native_picrust2	9	0.6481652304396135	0.043577703952171594	4697	5626	0	0.043577703952171594
+PRIMARY_all_six_23group	bioreactor	bioreactor	Bioreactor	2	OTU-Taxa	otu_taxa_e3	9	0.5867107872541993	0.021934871411878304	4697	17289	1	0.021934871411878304
+PRIMARY_all_six_23group	bioreactor	bioreactor	Bioreactor	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	9	0.6756195128705964	0.0329929588091525	4697	17289	1	0.0329929588091525
+PRIMARY_all_six_23group	bioreactor	bioreactor	Bioreactor	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	9	0.6010548393926115	0.06509802701770791	4697	17289	1	0.06509802701770791
+PRIMARY_all_six_23group	bioreactor	bioreactor	Bioreactor	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	9	0.6721480042810304	0.020323645091986975	4697	17289	1	0.020323645091986975
+PRIMARY_all_six_23group	bioreactor	bioreactor	Bioreactor	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	9	0.6768947769591196	0.0449447369149881	4697	17289	1	0.0449447369149881
+PRIMARY_all_six_23group	blueberry	blueberry	Blueberry soil	1	PICRUSt2	native_picrust2	22	0.8232359257059776	0.029101998355792105	6645	6423	0	0.029101998355792105
+PRIMARY_all_six_23group	blueberry	blueberry	Blueberry soil	2	OTU-Taxa	otu_taxa_e3	22	0.7277237676392437	0.03385732247854694	6645	17255	1	0.03385732247854694
+PRIMARY_all_six_23group	blueberry	blueberry	Blueberry soil	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	22	0.8136188159501473	0.030915321622759225	6645	17255	1	0.030915321622759225
+PRIMARY_all_six_23group	blueberry	blueberry	Blueberry soil	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	22	0.7702445242391988	0.022892970326071602	6645	17255	1	0.022892970326071602
+PRIMARY_all_six_23group	blueberry	blueberry	Blueberry soil	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	22	0.7863372495210313	0.036622031054315295	6645	17255	1	0.036622031054315295
+PRIMARY_all_six_23group	blueberry	blueberry	Blueberry soil	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	22	0.811700066572017	0.03213994153564109	6645	17255	1	0.03213994153564109
+PRIMARY_all_six_23group	bonneville_salt_flats	PRJNA522308	Bonneville salt flats	1	PICRUSt2	native_picrust2	16	0.6516337980564759	0.01873454321892651	5689	7858	0	0.01873454321892651
+PRIMARY_all_six_23group	bonneville_salt_flats	PRJNA522308	Bonneville salt flats	2	OTU-Taxa	otu_taxa_e3	16	0.5234906374902372	0.028475225400832777	5689	17831	1	0.028475225400832777
+PRIMARY_all_six_23group	bonneville_salt_flats	PRJNA522308	Bonneville salt flats	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	16	0.7018507634596056	0.010794657568347896	5689	17831	1	0.010794657568347896
+PRIMARY_all_six_23group	bonneville_salt_flats	PRJNA522308	Bonneville salt flats	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	16	0.6736104638750845	0.01685432692249546	5689	17831	1	0.01685432692249546
+PRIMARY_all_six_23group	bonneville_salt_flats	PRJNA522308	Bonneville salt flats	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	16	0.6113303871043297	0.023897421907564977	5689	17831	1	0.023897421907564977
+PRIMARY_all_six_23group	bonneville_salt_flats	PRJNA522308	Bonneville salt flats	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	16	0.6875291819260473	0.018181497234535268	5689	17831	1	0.018181497234535268
+PRIMARY_all_six_23group	brooks_forward	PRJNA876771	Brooks forward	1	PICRUSt2	native_picrust2	41	0.5469364431961173	0.15793636767981067	2196	6738	0	0.15793636767981067
+PRIMARY_all_six_23group	brooks_forward	PRJNA876771	Brooks forward	2	OTU-Taxa	otu_taxa_e3	41	0.4381859657567331	0.12001588613707534	2196	17291	1	0.12001588613707534
+PRIMARY_all_six_23group	brooks_forward	PRJNA876771	Brooks forward	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	41	0.5769659964795643	0.15265258338613286	2196	17291	1	0.15265258338613286
+PRIMARY_all_six_23group	brooks_forward	PRJNA876771	Brooks forward	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	41	0.5610882688256033	0.1483835097102663	2196	17291	1	0.1483835097102663
+PRIMARY_all_six_23group	brooks_forward	PRJNA876771	Brooks forward	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	41	0.5422567154615084	0.15422367172220466	2196	17291	1	0.15422367172220466
+PRIMARY_all_six_23group	brooks_forward	PRJNA876771	Brooks forward	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	41	0.5854707935663728	0.16813415918636326	2196	17291	1	0.16813415918636326
+PRIMARY_all_six_23group	brooks_reverse_only	PRJNA876771	Brooks reverse-only	1	PICRUSt2	native_picrust2	31	0.5517482279348722	0.11727591482760288	2249	6386	0	0.11727591482760288
+PRIMARY_all_six_23group	brooks_reverse_only	PRJNA876771	Brooks reverse-only	2	OTU-Taxa	otu_taxa_e3	31	0.4610019212163563	0.10158203270457833	2249	17291	1	0.10158203270457833
+PRIMARY_all_six_23group	brooks_reverse_only	PRJNA876771	Brooks reverse-only	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	31	0.5683287552770413	0.1109821279325522	2249	17291	1	0.1109821279325522
+PRIMARY_all_six_23group	brooks_reverse_only	PRJNA876771	Brooks reverse-only	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	31	0.5613856886259033	0.10764089290468791	2249	17291	1	0.10764089290468791
+PRIMARY_all_six_23group	brooks_reverse_only	PRJNA876771	Brooks reverse-only	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	31	0.5490069728194485	0.11073321665294009	2249	17291	1	0.11073321665294009
+PRIMARY_all_six_23group	brooks_reverse_only	PRJNA876771	Brooks reverse-only	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	31	0.5785385227907593	0.11715718915324967	2249	17291	1	0.11715718915324967
+PRIMARY_all_six_23group	cameroon	cameroon	Cameroon gut	1	PICRUSt2	native_picrust2	57	0.8579065763214878	0.02178078974586335	6994	6514	0	0.02178078974586335
+PRIMARY_all_six_23group	cameroon	cameroon	Cameroon gut	2	OTU-Taxa	otu_taxa_e3	57	0.8493629055699847	0.04264634646621871	6994	17234	1	0.04264634646621871
+PRIMARY_all_six_23group	cameroon	cameroon	Cameroon gut	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	57	0.8630587090135459	0.020259798496830426	6994	17234	1	0.020259798496830426
+PRIMARY_all_six_23group	cameroon	cameroon	Cameroon gut	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	57	0.8911924215819614	0.023370134592224336	6994	17234	1	0.023370134592224336
+PRIMARY_all_six_23group	cameroon	cameroon	Cameroon gut	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	57	0.8346888702646588	0.02140502656740478	6994	17234	1	0.02140502656740478
+PRIMARY_all_six_23group	cameroon	cameroon	Cameroon gut	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	57	0.8366817944265595	0.023560661012202527	6994	17234	1	0.023560661012202527
+PRIMARY_all_six_23group	emp500_saline_sediment	PRJEB42019	Emp500 saline sediment	1	PICRUSt2	native_picrust2	64	0.4851692427650898	0.23865360299924365	8574	9665	0	0.23865360299924365
+PRIMARY_all_six_23group	emp500_saline_sediment	PRJEB42019	Emp500 saline sediment	2	OTU-Taxa	otu_taxa_e3	64	0.48861791199924975	0.23574516673195015	8574	17231	1	0.23574516673195015
+PRIMARY_all_six_23group	emp500_saline_sediment	PRJEB42019	Emp500 saline sediment	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	64	0.5451917358693372	0.2596730398499821	8574	17231	1	0.2596730398499821
+PRIMARY_all_six_23group	emp500_saline_sediment	PRJEB42019	Emp500 saline sediment	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	64	0.5383608553600353	0.2549496260127491	8574	17231	1	0.2549496260127491
+PRIMARY_all_six_23group	emp500_saline_sediment	PRJEB42019	Emp500 saline sediment	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	64	0.49570167150886707	0.2411463757026991	8574	17231	1	0.2411463757026991
+PRIMARY_all_six_23group	emp500_saline_sediment	PRJEB42019	Emp500 saline sediment	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	64	0.508421151062561	0.2518445317525438	8574	17231	1	0.2518445317525438
+PRIMARY_all_six_23group	empty_quarter	empty_quarter	Empty Quarter	1	PICRUSt2	native_picrust2	341	0.6815443034337088	0.0836195822786847	11877	10543	0	0.0836195822786847
+PRIMARY_all_six_23group	empty_quarter	empty_quarter	Empty Quarter	2	OTU-Taxa	otu_taxa_e3	341	0.6286435956173161	0.07451432528323852	11877	15050	1	0.07451432528323852
+PRIMARY_all_six_23group	empty_quarter	empty_quarter	Empty Quarter	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	341	0.6605418258830724	0.0808726775820277	11877	15050	1	0.0808726775820277
+PRIMARY_all_six_23group	empty_quarter	empty_quarter	Empty Quarter	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	341	0.6027118002370537	0.06998227814643772	11877	15050	1	0.06998227814643772
+PRIMARY_all_six_23group	empty_quarter	empty_quarter	Empty Quarter	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	341	0.6893757217573798	0.08595810217477061	11877	15050	1	0.08595810217477061
+PRIMARY_all_six_23group	empty_quarter	empty_quarter	Empty Quarter	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	341	0.6903613022142351	0.08550357281044708	11877	15050	1	0.08550357281044708
+PRIMARY_all_six_23group	han_river	han_river	Han River	1	PICRUSt2	native_picrust2	45	0.6715055523140362	0.06859864978617525	10625	9587	0	0.06859864978617525
+PRIMARY_all_six_23group	han_river	han_river	Han River	2	OTU-Taxa	otu_taxa_e3	45	0.7475712458966128	0.03817093312551641	10625	17067	1	0.03817093312551641
+PRIMARY_all_six_23group	han_river	han_river	Han River	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	45	0.7693659416735252	0.031384990538765666	10625	17067	1	0.031384990538765666
+PRIMARY_all_six_23group	han_river	han_river	Han River	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	45	0.7702654738119022	0.029958665896976953	10625	17067	1	0.029958665896976953
+PRIMARY_all_six_23group	han_river	han_river	Han River	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	45	0.6759891455637879	0.0638952237036955	10625	17067	1	0.0638952237036955
+PRIMARY_all_six_23group	han_river	han_river	Han River	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	45	0.7528159690990233	0.05577474593904295	10625	17067	1	0.05577474593904295
+PRIMARY_all_six_23group	hmp	hmp	HMP body sites	1	PICRUSt2	native_picrust2	137	0.8265024478330114	0.07688704293575986	8254	5890	0	0.07688704293575986
+PRIMARY_all_six_23group	hmp	hmp	HMP body sites	2	OTU-Taxa	otu_taxa_e3	137	0.7516378204841453	0.08831366671098831	8254	17127	1	0.08831366671098831
+PRIMARY_all_six_23group	hmp	hmp	HMP body sites	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	137	0.7398460193657448	0.07404721910409563	8254	17127	1	0.07404721910409563
+PRIMARY_all_six_23group	hmp	hmp	HMP body sites	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	137	0.7258247219427013	0.05531565681756489	8254	17127	1	0.05531565681756489
+PRIMARY_all_six_23group	hmp	hmp	HMP body sites	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	137	0.8036765068411477	0.08415944960660882	8254	17127	1	0.08415944960660882
+PRIMARY_all_six_23group	hmp	hmp	HMP body sites	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	137	0.7472486837647202	0.07416618486420844	8254	17127	1	0.07416618486420844
+PRIMARY_all_six_23group	indian	indian	Indian gut	1	PICRUSt2	native_picrust2	108	0.7824667071824408	0.03714384096468014	5521	6528	0	0.03714384096468014
+PRIMARY_all_six_23group	indian	indian	Indian gut	2	OTU-Taxa	otu_taxa_e3	108	0.8202731264913196	0.041909377973621174	5521	17290	1	0.041909377973621174
+PRIMARY_all_six_23group	indian	indian	Indian gut	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	108	0.7828887085397171	0.03753204472717746	5521	17290	1	0.03753204472717746
+PRIMARY_all_six_23group	indian	indian	Indian gut	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	108	0.8017643803256468	0.03372367375807542	5521	17290	1	0.03372367375807542
+PRIMARY_all_six_23group	indian	indian	Indian gut	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	108	0.7528349190978113	0.03882911854824121	5521	17290	1	0.03882911854824121
+PRIMARY_all_six_23group	indian	indian	Indian gut	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	108	0.7520057388881166	0.04515875996418229	5521	17290	1	0.04515875996418229
+PRIMARY_all_six_23group	mammal	mammal	Mammal gut	1	PICRUSt2	native_picrust2	11	0.7906052241052152	0.01915783151098645	5530	5125	0	0.01915783151098645
+PRIMARY_all_six_23group	mammal	mammal	Mammal gut	2	OTU-Taxa	otu_taxa_e3	11	0.7946197929794359	0.03064227015979847	5530	17282	1	0.03064227015979847
+PRIMARY_all_six_23group	mammal	mammal	Mammal gut	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	11	0.7915557157351796	0.022513114119105036	5530	17282	1	0.022513114119105036
+PRIMARY_all_six_23group	mammal	mammal	Mammal gut	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	11	0.8060815039541087	0.018005553237288554	5530	17282	1	0.018005553237288554
+PRIMARY_all_six_23group	mammal	mammal	Mammal gut	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	11	0.77617816612128	0.018586143514697652	5530	17282	1	0.018586143514697652
+PRIMARY_all_six_23group	mammal	mammal	Mammal gut	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	11	0.7940778573294479	0.013495810493088694	5530	17282	1	0.013495810493088694
+PRIMARY_all_six_23group	matchado	PRJEB6070_crc91	Matchado CRC	1	PICRUSt2	native_picrust2	91	0.6645483413640192	0.04706711450513818	7643	8260	0	0.04706711450513818
+PRIMARY_all_six_23group	matchado	PRJEB6070_crc91	Matchado CRC	2	OTU-Taxa	otu_taxa_e3	91	0.7480685873188578	0.04979418604373804	7643	17120	1	0.04979418604373804
+PRIMARY_all_six_23group	matchado	PRJEB6070_crc91	Matchado CRC	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	91	0.7311362236176647	0.044488025616022046	7643	17120	1	0.044488025616022046
+PRIMARY_all_six_23group	matchado	PRJEB6070_crc91	Matchado CRC	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	91	0.7338681766511258	0.044172351585445004	7643	17120	1	0.044172351585445004
+PRIMARY_all_six_23group	matchado	PRJEB6070_crc91	Matchado CRC	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	91	0.6670187248801523	0.04732128500350896	7643	17120	1	0.04732128500350896
+PRIMARY_all_six_23group	matchado	PRJEB6070_crc91	Matchado CRC	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	91	0.7106170643771547	0.04610823053557004	7643	17120	1	0.04610823053557004
+PRIMARY_all_six_23group	ocean	ocean	Ocean water	1	PICRUSt2	native_picrust2	6	0.824994271792049	0.012796092416405839	6622	6191	0	0.012796092416405839
+PRIMARY_all_six_23group	ocean	ocean	Ocean water	2	OTU-Taxa	otu_taxa_e3	6	0.6603872733417228	0.013092940579491275	6622	17245	1	0.013092940579491275
+PRIMARY_all_six_23group	ocean	ocean	Ocean water	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	6	0.8251565813446554	0.011976637103208196	6622	17245	1	0.011976637103208196
+PRIMARY_all_six_23group	ocean	ocean	Ocean water	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	6	0.762403896834667	0.013570920845954612	6622	17245	1	0.013570920845954612
+PRIMARY_all_six_23group	ocean	ocean	Ocean water	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	6	0.7833344014735397	0.019787757791536832	6622	17245	1	0.019787757791536832
+PRIMARY_all_six_23group	ocean	ocean	Ocean water	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	6	0.8252329103669452	0.0107886686451787	6622	17245	1	0.0107886686451787
+PRIMARY_all_six_23group	olive_xylem_season1	PRJNA629675	Olive xylem season 1	1	PICRUSt2	native_picrust2	12	-0.08882444553170817	0.1524626163390923	1555	6312	0	0.1524626163390923
+PRIMARY_all_six_23group	olive_xylem_season1	PRJNA629675	Olive xylem season 1	2	OTU-Taxa	otu_taxa_e3	12	-0.09960361272017056	0.14622158085364023	1555	17286	1	0.14622158085364023
+PRIMARY_all_six_23group	olive_xylem_season1	PRJNA629675	Olive xylem season 1	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	12	-0.04540849565960486	0.13946689501700044	1555	17286	1	0.13946689501700044
+PRIMARY_all_six_23group	olive_xylem_season1	PRJNA629675	Olive xylem season 1	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	12	-0.017386067712513827	0.12808416636541456	1555	17286	1	0.12808416636541456
+PRIMARY_all_six_23group	olive_xylem_season1	PRJNA629675	Olive xylem season 1	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	12	-0.07445285480128981	0.1854918314539496	1555	17286	1	0.1854918314539496
+PRIMARY_all_six_23group	olive_xylem_season1	PRJNA629675	Olive xylem season 1	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	12	-0.08601122995715087	0.1558878795330955	1555	17286	1	0.1558878795330955
+PRIMARY_all_six_23group	olive_xylem_season2	PRJNA629675	Olive xylem season 2	1	PICRUSt2	native_picrust2	12	0.06215381515357692	0.17202095526543018	1681	4428	0	0.17202095526543018
+PRIMARY_all_six_23group	olive_xylem_season2	PRJNA629675	Olive xylem season 2	2	OTU-Taxa	otu_taxa_e3	12	0.11305059371995026	0.19640903896531042	1681	17286	1	0.19640903896531042
+PRIMARY_all_six_23group	olive_xylem_season2	PRJNA629675	Olive xylem season 2	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	12	0.07205358657133058	0.1240770096713771	1681	17286	1	0.1240770096713771
+PRIMARY_all_six_23group	olive_xylem_season2	PRJNA629675	Olive xylem season 2	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	12	0.08726860615011843	0.11513378550330654	1681	17286	1	0.11513378550330654
+PRIMARY_all_six_23group	olive_xylem_season2	PRJNA629675	Olive xylem season 2	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	12	0.09882384176875776	0.24245093335391843	1681	17286	1	0.24245093335391843
+PRIMARY_all_six_23group	olive_xylem_season2	PRJNA629675	Olive xylem season 2	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	12	0.039586583137715355	0.13532017672654678	1681	17286	1	0.13532017672654678
+PRIMARY_all_six_23group	oral_plaque	oral_plaque	Oral plaque	1	PICRUSt2	native_picrust2	28	0.7191681630208807	0.036959462917621845	6097	7628	0	0.036959462917621845
+PRIMARY_all_six_23group	oral_plaque	oral_plaque	Oral plaque	2	OTU-Taxa	otu_taxa_e3	28	0.7335598833845599	0.04399098612998247	6097	17267	1	0.04399098612998247
+PRIMARY_all_six_23group	oral_plaque	oral_plaque	Oral plaque	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	28	0.7815814130854462	0.03183428254661356	6097	17267	1	0.03183428254661356
+PRIMARY_all_six_23group	oral_plaque	oral_plaque	Oral plaque	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	28	0.7847908097123824	0.03071068495654576	6097	17267	1	0.03071068495654576
+PRIMARY_all_six_23group	oral_plaque	oral_plaque	Oral plaque	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	28	0.722541720515161	0.03686492638812068	6097	17267	1	0.03686492638812068
+PRIMARY_all_six_23group	oral_plaque	oral_plaque	Oral plaque	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	28	0.7769470757785184	0.03775399156372795	6097	17267	1	0.03775399156372795
+PRIMARY_all_six_23group	osd_ocean	osd_ocean	OSD ocean	1	PICRUSt2	native_picrust2	60	0.561767299158008	0.12231540014922461	6960	9073	0	0.12231540014922461
+PRIMARY_all_six_23group	osd_ocean	osd_ocean	OSD ocean	2	OTU-Taxa	otu_taxa_e3	60	0.6133252454939345	0.1189784234174842	6960	17143	1	0.1189784234174842
+PRIMARY_all_six_23group	osd_ocean	osd_ocean	OSD ocean	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	60	0.6253003429727102	0.12569054466035273	6960	17143	1	0.12569054466035273
+PRIMARY_all_six_23group	osd_ocean	osd_ocean	OSD ocean	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	60	0.614379288978299	0.12503392501886507	6960	17143	1	0.12503392501886507
+PRIMARY_all_six_23group	osd_ocean	osd_ocean	OSD ocean	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	60	0.5780938972597386	0.12504135625527255	6960	17143	1	0.12504135625527255
+PRIMARY_all_six_23group	osd_ocean	osd_ocean	OSD ocean	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	60	0.580153958573692	0.13075302092156338	6960	17143	1	0.13075302092156338
+PRIMARY_all_six_23group	plastic_biofilm	PRJNA1195827	Plastic biofilm	1	PICRUSt2	native_picrust2	73	0.5803833458472596	0.19397439398856017	8067	8668	0	0.19397439398856017
+PRIMARY_all_six_23group	plastic_biofilm	PRJNA1195827	Plastic biofilm	2	OTU-Taxa	otu_taxa_e3	73	0.5453989203586337	0.1588217805312349	8067	17186	1	0.1588217805312349
+PRIMARY_all_six_23group	plastic_biofilm	PRJNA1195827	Plastic biofilm	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	73	0.6075197574297175	0.19234500864763296	8067	17186	1	0.19234500864763296
+PRIMARY_all_six_23group	plastic_biofilm	PRJNA1195827	Plastic biofilm	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	73	0.5958437669686248	0.17883652145823944	8067	17186	1	0.17883652145823944
+PRIMARY_all_six_23group	plastic_biofilm	PRJNA1195827	Plastic biofilm	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	73	0.579268536452652	0.19149191626792028	8067	17186	1	0.19149191626792028
+PRIMARY_all_six_23group	plastic_biofilm	PRJNA1195827	Plastic biofilm	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	73	0.6010551778275456	0.20337781561677998	8067	17186	1	0.20337781561677998
+PRIMARY_all_six_23group	primate	primate	Primate gut	1	PICRUSt2	native_picrust2	77	0.7585071411110332	0.03254905381320957	6882	7046	0	0.03254905381320957
+PRIMARY_all_six_23group	primate	primate	Primate gut	2	OTU-Taxa	otu_taxa_e3	77	0.7863617177072937	0.03565802003694818	6882	17205	1	0.03565802003694818
+PRIMARY_all_six_23group	primate	primate	Primate gut	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	77	0.7746717687190373	0.03144038928249092	6882	17205	1	0.03144038928249092
+PRIMARY_all_six_23group	primate	primate	Primate gut	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	77	0.8015790248308942	0.02730408232808785	6882	17205	1	0.02730408232808785
+PRIMARY_all_six_23group	primate	primate	Primate gut	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	77	0.7648059505684965	0.03259126170729211	6882	17205	1	0.03259126170729211
+PRIMARY_all_six_23group	primate	primate	Primate gut	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	77	0.7752350763876108	0.030147700597358638	6882	17205	1	0.030147700597358638
+PRIMARY_all_six_23group	skin_A	skin_family	Skin A	1	PICRUSt2	native_picrust2	202	0.4409048356097492	0.21882739594804887	11475	9403	0	0.21882739594804887
+PRIMARY_all_six_23group	skin_A	skin_family	Skin A	2	OTU-Taxa	otu_taxa_e3	202	0.46249381861845956	0.17805164385092173	11475	17334	1	0.17805164385092173
+PRIMARY_all_six_23group	skin_A	skin_family	Skin A	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	202	0.48007334230942744	0.2136768520737336	11475	17334	1	0.2136768520737336
+PRIMARY_all_six_23group	skin_A	skin_family	Skin A	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	202	0.4987314209527638	0.21011248690453427	11475	17334	1	0.21011248690453427
+PRIMARY_all_six_23group	skin_A	skin_family	Skin A	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	202	0.4416989896699676	0.21484009018074493	11475	17334	1	0.21484009018074493
+PRIMARY_all_six_23group	skin_A	skin_family	Skin A	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	202	0.4637155141507628	0.21742417640632497	11475	17334	1	0.21742417640632497
+PRIMARY_all_six_23group	skin_B	skin_family	Skin B	1	PICRUSt2	native_picrust2	42	0.39662439759306684	0.21405074176183164	7144	8729	0	0.21405074176183164
+PRIMARY_all_six_23group	skin_B	skin_family	Skin B	2	OTU-Taxa	otu_taxa_e3	42	0.4029032953598322	0.20073975229722205	7144	17334	1	0.20073975229722205
+PRIMARY_all_six_23group	skin_B	skin_family	Skin B	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	42	0.42430679589601394	0.21723658928690076	7144	17334	1	0.21723658928690076
+PRIMARY_all_six_23group	skin_B	skin_family	Skin B	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	42	0.4305521022112127	0.21782438059606132	7144	17334	1	0.21782438059606132
+PRIMARY_all_six_23group	skin_B	skin_family	Skin B	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	42	0.3982677849405739	0.21426453092137487	7144	17334	1	0.21426453092137487
+PRIMARY_all_six_23group	skin_B	skin_family	Skin B	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	42	0.41022131623410324	0.21719432237864664	7144	17334	1	0.21719432237864664
+PRIMARY_all_six_23group	skin_ctcl	skin_ctcl	Skin CTCL	1	PICRUSt2	native_picrust2	36	0.5596335173138403	0.1753731813920063	8050	8843	0	0.1753731813920063
+PRIMARY_all_six_23group	skin_ctcl	skin_ctcl	Skin CTCL	2	OTU-Taxa	otu_taxa_e3	36	0.6036615903639261	0.1735225609500605	8050	17065	1	0.1735225609500605
+PRIMARY_all_six_23group	skin_ctcl	skin_ctcl	Skin CTCL	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	36	0.5964839551853629	0.18067799162508616	8050	17065	1	0.18067799162508616
+PRIMARY_all_six_23group	skin_ctcl	skin_ctcl	Skin CTCL	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	36	0.6038762594602829	0.18035713862363523	8050	17065	1	0.18035713862363523
+PRIMARY_all_six_23group	skin_ctcl	skin_ctcl	Skin CTCL	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	36	0.5559728214853152	0.17473388126587702	8050	17065	1	0.17473388126587702
+PRIMARY_all_six_23group	skin_ctcl	skin_ctcl	Skin CTCL	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	36	0.5864423871018597	0.18516793035988444	8050	17065	1	0.18516793035988444
+PRIMARY_all_six_23group	sun_human_kw	PRJNA349463	Sun rural/urban	1	PICRUSt2	native_picrust2	40	0.6668957789978663	0.020306111348546665	5367	7104	0	0.020306111348546665
+PRIMARY_all_six_23group	sun_human_kw	PRJNA349463	Sun rural/urban	2	OTU-Taxa	otu_taxa_e3	40	0.7653301471012548	0.05960555722846767	5367	17285	1	0.05960555722846767
+PRIMARY_all_six_23group	sun_human_kw	PRJNA349463	Sun rural/urban	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	40	0.7273643837592989	0.026309477507047138	5367	17285	1	0.026309477507047138
+PRIMARY_all_six_23group	sun_human_kw	PRJNA349463	Sun rural/urban	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	40	0.745750475963532	0.029639757213026603	5367	17285	1	0.029639757213026603
+PRIMARY_all_six_23group	sun_human_kw	PRJNA349463	Sun rural/urban	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	40	0.667268993092225	0.020317424598961315	5367	17285	1	0.020317424598961315
+PRIMARY_all_six_23group	sun_human_kw	PRJNA349463	Sun rural/urban	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	40	0.7242417904261527	0.028843099591534475	5367	17285	1	0.028843099591534475
+PRIMARY_all_six_23group	topsoil	topsoil	Topsoil	1	PICRUSt2	native_picrust2	18	0.711842667237588	0.013842540970580746	8525	9200	0	0.013842540970580746
+PRIMARY_all_six_23group	topsoil	topsoil	Topsoil	2	OTU-Taxa	otu_taxa_e3	18	0.7620391997879923	0.01321947244610418	8525	17206	1	0.01321947244610418
+PRIMARY_all_six_23group	topsoil	topsoil	Topsoil	3	PICRUSt2 + adaptation	picrust2_teacher_only_residual	18	0.7911215034448096	0.016831027560267744	8525	17206	1	0.016831027560267744
+PRIMARY_all_six_23group	topsoil	topsoil	Topsoil	4	PICRUSt2 + OTU-Taxa	picrust2_teacher_embedding_residual	18	0.7705424480967153	0.013862079807443283	8525	17206	1	0.013862079807443283
+PRIMARY_all_six_23group	topsoil	topsoil	Topsoil	5	R3 sample-KO residual	contextual_r3_sample_ko_residual	18	0.7159230417464655	0.01269188169194388	8525	17206	1	0.01269188169194388
+PRIMARY_all_six_23group	topsoil	topsoil	Topsoil	6	D/G reference-anchored mixture	dg_reference_anchored_mixture	18	0.762824425267985	0.012167181053411804	8525	17206	1	0.012167181053411804
