@@ -1,4 +1,8 @@
-"""ROC/PR and decile outcome-composition diagnostics for effect estimates."""
+"""Project-developed ROC/PR and decile diagnostics for effect estimates.
+
+These metrics are extensions from this repository and are not attributed to
+the PICRUSt, PICRUSt2, Sun, Matchado, or Tax4Fun2 papers.
+"""
 
 from __future__ import annotations
 

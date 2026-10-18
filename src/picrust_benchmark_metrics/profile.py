@@ -1,9 +1,13 @@
-"""PICRUSt/PICRUSt2-style sample-profile metrics.
+"""Sample-profile metrics with PICRUSt/PICRUSt2 benchmarking precedent.
+
+References: Langille et al. (2013), doi:10.1038/nbt.2676, and Douglas et al.
+(2020), doi:10.1038/s41587-020-0548-6.
 
 Inputs are sample-by-KO tables.  The profile comparison follows the source
 notebook: restrict to the pairwise shared sample and KO surface, L1-normalize
 each row, exclude a sample if either row total is zero, then correlate KO ranks
-within each retained sample.
+within each retained sample. The exact surface and zero-fill rules are this
+repository's documented operationalization, not a claim of verbatim paper code.
 """
 
 from __future__ import annotations

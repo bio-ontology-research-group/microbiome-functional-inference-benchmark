@@ -88,6 +88,27 @@ nb1 = notebook([
     are recomputed from the accepted sample/per-KO evaluation tables produced from frozen WGS and cached
     predictions. The source files remain read-only.
     '''),
+    md('''
+    ## Attribution and citation scope
+
+    The established metrics in this notebook are credited to their original sources:
+
+    - sample-profile Spearman and differential-KO benchmarking precedent: Langille et al. (2013),
+      [doi:10.1038/nbt.2676](https://doi.org/10.1038/nbt.2676), and Douglas et al. (2020),
+      [doi:10.1038/s41587-020-0548-6](https://doi.org/10.1038/s41587-020-0548-6);
+    - raw-*p* differential-KO precision/recall/F1 and 20 prediction-label randomizations: Matchado et al.
+      (2024), [doi:10.1099/mgen.0.001203](https://doi.org/10.1099/mgen.0.001203);
+    - signed group-inference correlation and 100 WGS-abundance shuffles: Sun, Jones & Fodor (2020),
+      [doi:10.1186/s40168-020-00815-y](https://doi.org/10.1186/s40168-020-00815-y).
+
+    PICRUSt2 is cited to Douglas et al. (2020), and Tax4Fun2 to Wemheuer et al. (2020),
+    [doi:10.1186/s40793-020-00358-7](https://doi.org/10.1186/s40793-020-00358-7). The basic-MLP
+    adaptation is this project's comparator, not a method from those papers. Sun et al. evaluated the
+    original Tax4Fun; here their metric definition is newly applied to Tax4Fun2. Matchado et al. did
+    evaluate Tax4Fun2. Paper-inspired figures use the cited visual grammar on this repository's studies;
+    they are not copies of the published figures. See `docs/REFERENCES.md` for the full bibliography and
+    metric-ownership map.
+    '''),
     code(COMMON + r'''
 METHODS = ["PICRUSt2", "PICRUSt2 + adaptation", "Tax4Fun2"]
 '''),
@@ -150,6 +171,8 @@ assert cohort.dataset.nunique() == 10
 assert published_matchado.groupby("prediction_method").dataset.nunique().eq(10).all()
 assert published_sun.groupby("prediction_method").dataset.nunique().eq(10).all()
 assert sun_randomizations.groupby(["dataset", "prediction_method"]).size().eq(100).all()
+assert set(published_matchado.published_source_doi) == {"10.1099/mgen.0.001203"}
+assert set(published_sun.published_source_doi) == {"10.1186/s40168-020-00815-y"}
 print(f"Local replay used {len(raw_sources)} bundled processed studies")
 display(tax4fun_coverage.loc[tax4fun_coverage.n_zero_total_samples.gt(0),
                              ["dataset", "n_samples", "n_zero_total_samples"]])
@@ -164,14 +187,14 @@ display(provenance_01)
     '''),
     code(r'''
 paper_audit = pd.DataFrame([
-    {"source": "PICRUSt2 Fig. 2a", "metric": "sample KO-abundance Spearman", "status": "replayed: 26 strata, three methods; paper-style faceted box/point panels"},
-    {"source": "PICRUSt2 Fig. 2b", "metric": "BH/FDR differential-KO precision, recall, F1", "status": "accepted BH-family extension replayed in Notebook 02; exact universal-single-copy normalization/ASV shuffle unavailable"},
-    {"source": "PICRUSt2 Fig. 3a", "metric": "MetaCyc pathway-abundance Spearman", "status": "unavailable: accepted surface is KO, not pathway abundance"},
-    {"source": "PICRUSt2 Fig. 3b", "metric": "reference-genome binary phenotype precision, recall, F1", "status": "out of scope: genome phenotype prediction, not paired community functional profiles"},
-    {"source": "Matchado Figs. 3/4/6/7", "metric": "raw-p differential-KO precision, recall, F1 + 20 label permutations", "status": "replayed below: 10 accepted contrasts, three methods; bar grid plus dumbbells"},
-    {"source": "Sun Figs. 3/4", "metric": "signed log10(p) inference Spearman + 100 WGS abundance permutations", "status": "replayed below: 10 accepted contrasts, three methods; observed points over control boxplots"},
-    {"source": "Sun Fig. 1", "metric": "sample profile Spearman + abundance-permutation control", "status": "observed Spearman replayed; separate composition-null analysis intentionally not added"},
-    {"source": "Sun supplementary", "metric": "5+5 sample-size sensitivity and KEGG-category stratification", "status": "unavailable on frozen accepted result surface; secondary sensitivity, not invented"},
+    {"source": "Douglas et al. 2020, PICRUSt2 Fig. 2a", "metric": "sample KO-abundance Spearman", "status": "replayed: 26 strata, three methods; figure-inspired faceted box/point panels"},
+    {"source": "Douglas et al. 2020, PICRUSt2 Fig. 2b", "metric": "BH/FDR differential-KO precision, recall, F1", "status": "related project implementation in Notebook 02; paper's universal-single-copy normalization and ASV shuffle are unavailable"},
+    {"source": "Douglas et al. 2020, PICRUSt2 Fig. 3a", "metric": "MetaCyc pathway-abundance Spearman", "status": "unavailable: accepted surface is KO, not pathway abundance"},
+    {"source": "Douglas et al. 2020, PICRUSt2 Fig. 3b", "metric": "reference-genome binary phenotype precision, recall, F1", "status": "out of scope: genome phenotype prediction, not paired community functional profiles"},
+    {"source": "Matchado et al. 2024, Figs. 3/4/6/7", "metric": "raw-p differential-KO precision, recall, F1 + 20 label permutations", "status": "replayed below: 10 accepted contrasts, three methods; bar grid plus dumbbells"},
+    {"source": "Sun et al. 2020, Figs. 3/4", "metric": "signed log10(p) inference Spearman + 100 WGS abundance permutations", "status": "replayed below: 10 accepted contrasts, three methods; observed points over control boxplots"},
+    {"source": "Sun et al. 2020, Fig. 1", "metric": "sample profile Spearman + abundance-permutation control", "status": "observed Spearman replayed; separate composition-shuffle control not added"},
+    {"source": "Sun et al. 2020, supplementary", "metric": "5+5 sample-size sensitivity and KEGG-category stratification", "status": "unavailable on frozen accepted result surface; secondary sensitivity, not invented"},
 ])
 display(paper_audit)
 '''),
@@ -224,7 +247,7 @@ print("Maximum bundled-matrix profile error:", f"{bundle_profile_cmp.absolute_er
       f"across {len(bundle_profile_cmp)} study-method-sample rows")
 '''),
     code(r'''
-# Plot 1: PICRUSt2-Fig.-2a-style per-study distributions for all three methods.
+# Plot 1: Douglas et al. (2020) PICRUSt2-Fig.-2a-inspired distributions.
 study_order = registry.dataset.tolist()
 fig, axes = plot_profile_study_panels(sample, registry, METHODS, colors=COLORS)
 '''),
@@ -248,11 +271,13 @@ display(gdelta.describe())
 fig, ax = plot_ko_coverage(coverage, METHODS, colors=COLORS)
 '''),
     md('''
-    ## Matchado-style differential-KO recovery
+    ## Matchado et al. (2024) differential-KO recovery
 
-    The library implements both (a) the paper-faithful legacy family—shared 5% prevalence, unadjusted
+    The library implements both (a) a paper-derived raw-*p* family—low-prevalence filtering, unadjusted
     two-sided rank-sum p < 0.05, precision/recall/F1, prediction-label permutations—and (b) the later
-    project extension using a WGS-only family with BH q < 0.05 and zero-fill. The completed paper-faithful
+    project extension using a WGS-only family with BH q < 0.05 and zero-fill. For direct comparison, the
+    library fixes one KO intersection and 5% prevalence surface across WGS and all three supplied methods;
+    this all-method surface is a repository choice. The completed paper-derived
     reference has PICRUSt2 and Tax4Fun2 results for the earlier labeled surface; it predates the basic-MLP
     adaptation and the two expansion contrasts, so there is no honest adaptation reference to compare on
     that surface. Notebook 02 evaluates the later BH extension for its deliberately fixed two-method scope.
@@ -283,12 +308,13 @@ fig, axes = plot_metric_row_grid(
 display(legacy_cmp)
 '''),
     md('''
-    ## Full paper-faithful Matchado and Sun replay
+    ## Full Matchado- and Sun-derived metric replay
 
     The replay loaded above reads frozen WGS/native/cached-adaptation/Tax4Fun2 matrices and audited labels,
     then calls the clean library for every eligible study. Matchado uses its published 20 prediction-label
     permutations. Sun uses signed `log10(p)` inference correlation and 100 independent WGS-KO abundance
-    shuffles with labels fixed. The figures below deliberately reuse each paper's visual grammar.
+    shuffles with labels fixed. The figures below deliberately reuse each paper's visual grammar while
+    applying the definitions to this repository's methods and accepted contrasts.
     '''),
     code(r'''
 assert published_matchado.dataset.nunique() == published_sun.dataset.nunique() == 10
@@ -297,17 +323,17 @@ display(published_matchado[["dataset", "prediction_method", "metric", "estimate"
 display(published_sun[["dataset", "prediction_method", "observed_inference_correlation", "randomization_mean"]].head(10))
 '''),
     code(r'''
-# Plot 6: Matchado-Fig.-6-style set recovery for three methods and all 10 contrasts.
+# Plot 6: Matchado et al. (2024) Fig. 6-inspired set recovery.
 set_metrics = published_matchado[published_matchado.metric.isin(["precision", "recall", "f1"])]
 MATCHADO_ORDER = ["cameroon", "hmp", "blueberry", "indian", "primate", "sun_human_kw",
                   "matchado", "brooks_forward", "activated_sludge", "han_river"]
 fig, axes = plot_metric_row_grid(
     set_metrics, MATCHADO_ORDER, METHODS, metric_order=["f1", "recall", "precision"],
-    colors=COLORS, title="Paper-faithful Matchado differential-KO recovery"
+    colors=COLORS, title="Matchado et al.-derived differential-KO recovery"
 )
 '''),
     code(r'''
-# Plot 7: Matchado-Fig.-7-style observed-versus-randomized dumbbells (lollipops).
+# Plot 7: Matchado et al. (2024) Fig. 7-inspired dumbbells (lollipops).
 fig, axes = plot_matchado_randomization_dumbbells(
     published_matchado, MATCHADO_ORDER, METHODS,
     metric_order=["f1", "precision", "recall"]
@@ -325,11 +351,11 @@ for ax, metric in zip(axes, ["auroc", "aupr"]):
     ax.tick_params(axis="x", rotation=65)
     if ax is axes[1]: ax.legend_.remove()
 axes[0].legend(title="", fontsize=8)
-fig.suptitle("Matchado-family WGS-significant-KO ranking (library extension)")
+fig.suptitle("WGS-significant-KO ranking — project extension on the Matchado surface")
 fig.tight_layout()
 '''),
     code(r'''
-# Plot 9: Sun-Fig.-4-style red observed points over blue 100-randomization controls.
+# Plot 9: Sun et al. (2020) Fig. 4-inspired observed/control display.
 fig, axes = plot_sun_observed_controls(
     published_sun, sun_randomizations, MATCHADO_ORDER, METHODS
 )
@@ -343,7 +369,7 @@ fig, axes = plot_sun_observed_controls(
     code(r'''
 metric_contract = pd.DataFrame([
     {"family": "KO profile", "studies": 26, "methods": 3, "reference": "accepted two-method table + completed 19-study Tax4Fun2 table", "validation": f"two-method error <=1e-12; Tax4Fun2 max error {tax4fun_cmp.absolute_error.max():.3g} on 1,218 samples"},
-    {"family": "Matchado paper-faithful", "studies": 10, "methods": 3, "reference": "completed legacy PICRUSt2/Tax4Fun2 rows where labels match", "validation": f"{len(legacy_cmp)} label-matched rows are surface-non-equivalent (max difference {legacy_cmp.absolute_error.max():.3g}); full three-method reference unavailable"},
+    {"family": "Matchado-derived raw-p replay", "studies": 10, "methods": 3, "reference": "completed legacy PICRUSt2/Tax4Fun2 rows where labels match", "validation": f"{len(legacy_cmp)} label-matched rows are surface-non-equivalent (max difference {legacy_cmp.absolute_error.max():.3g}); full three-method reference unavailable"},
     {"family": "Matchado BH extension", "studies": 10, "methods": 2, "reference": "accepted unified5 tables", "validation": "retained in Notebook 02's fixed two-method scope"},
     {"family": "Sun inference correlation", "studies": 10, "methods": 3, "reference": "none on exact accepted surface", "validation": "full 100-randomization replay complete; comparison unavailable"},
 ])
@@ -363,6 +389,16 @@ nb2 = notebook([
 
     WGS-derived labels are target-informed, cohort-conditional, post-hoc diagnostics and are not deployable
     prediction targets.
+    '''),
+    md('''
+    ## Attribution boundary
+
+    The effect-size relationship, directional ROC/precision-recall summaries, AUROC/average precision,
+    and prediction-ranked decile composition in this notebook are **project-developed extensions**. They
+    are not attributed to the PICRUSt, PICRUSt2, Tax4Fun2, Sun, or Matchado papers. The BH set-recovery
+    section uses published differential-KO set-recovery precedent, but its WGS-only family, BH correction,
+    and zero-fill policy are repository-specific. Complete citations and ownership notes are in
+    `docs/REFERENCES.md`.
     '''),
     code(COMMON + r'''
 from picrust_benchmark_metrics import directional_ranking_curves, decile_outcome_composition
@@ -497,18 +533,19 @@ fig, axes = plot_directional_roc_grid(
 )
 '''),
     md('''
-    ## Matchado-inspired BH recovery
+    ## Project BH recovery extension
 
-    This is the project adaptation of Matchado’s set-recovery idea: the WGS-only detectable family is tested
-    once, BH-corrected once, and shared by both methods. The plot uses the completed 400-permutation summary;
-    it is not a new null analysis in this notebook.
+    This project implementation combines the differential-KO set-recovery precedent in Douglas et al.
+    (2020) and Matchado et al. (2024) with a WGS-only detectable family that is tested once, BH-corrected
+    once, and shared by both methods. Its surface rules differ from both papers. The plot uses the completed
+    400-permutation summary; it is not a new randomization analysis in this notebook.
     '''),
     code(r'''
 assert class_ref.groupby(["dataset", "prediction_method"]).ngroups == 20
 fig, ax = plt.subplots(figsize=(11, 5))
 sns.barplot(data=class_ref, x="dataset", y="f1", hue="prediction_method", hue_order=METHODS, palette=COLORS, ax=ax)
 ax.set(xlabel="Biological contrast", ylabel="BH significant-KO recovery F1",
-       title="Shared-WGS-family Matchado extension (all 10 studies)")
+       title="Project shared-WGS-family BH recovery (all 10 studies)")
 ax.tick_params(axis="x", rotation=55)
 ax.legend(title="")
 fig.tight_layout()

@@ -183,7 +183,7 @@ def replay_published_group_metrics(
     matchado_permutations: int = 20,
     sun_randomizations: int = 100,
 ):
-    """Run profile, paper-faithful Matchado, and Sun metrics on the accepted studies."""
+    """Run profile plus published-definition Matchado and Sun metrics."""
     from picrust_benchmark_metrics import (
         matchado_differential_abundance_metrics,
         samplewise_spearman_on_universe,

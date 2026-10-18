@@ -24,7 +24,7 @@ def replay_bundled_group_metrics(
     matchado_permutations: int = 20,
     sun_randomizations: int = 100,
 ):
-    """Recompute profile, Matchado-style, and Sun-style results for all bundles."""
+    """Recompute profile, Matchado-derived, and Sun-derived results for all bundles."""
     studies = load_processed_studies(studies_directory)
     profile_rows, matchado_rows, sun_rows, control_rows = [], [], [], []
     for dataset, (truth, predictions, labels, metadata) in studies.items():

@@ -20,5 +20,6 @@ def test_sun_control_keeps_each_ko_marginal_and_labels_fixed():
         truth, {"PICRUSt2": truth.copy()}, labels, group_a="case", group_b="control", n_randomizations=3, random_seed=3
     )
     assert summary.loc[0, "published_source"] == "Sun et al. 2020"
+    assert summary.loc[0, "published_source_doi"] == "10.1186/s40168-020-00815-y"
     assert not randomizations.labels_permuted.any()
     assert len(details) == 3

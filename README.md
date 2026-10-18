@@ -21,6 +21,24 @@ biological question being asked. The goal is to help users interpret the
 metrics and choose an evaluation strategy deliberately, rather than select a
 score without understanding the behavior behind it.
 
+## Attribution
+
+This repository brings published benchmark metrics into a reusable Python
+implementation; it does not claim those metrics as original contributions.
+Profile-correlation and differential-KO precedents are credited to the
+[PICRUSt](https://doi.org/10.1038/nbt.2676) and
+[PICRUSt2](https://doi.org/10.1038/s41587-020-0548-6) papers. The raw-*p*
+differential-KO precision/recall/F1 analysis and 20-round prediction-label
+randomization are credited to
+[Matchado et al. (2024)](https://doi.org/10.1099/mgen.0.001203). The signed
+group-inference correlation and 100-round WGS-abundance shuffle are credited to
+[Sun et al. (2020)](https://doi.org/10.1186/s40168-020-00815-y).
+
+The effect-size, directional ROC/precision-recall, and prediction-ranked decile
+analyses are extensions developed in this project. The complete ownership map,
+method citations, and distinctions between paper definitions and repository
+implementation choices are in [docs/REFERENCES.md](docs/REFERENCES.md).
+
 ## Install and run
 
 ```bash
@@ -40,8 +58,8 @@ pytest
 ## Included notebooks
 
 - `01_established_profile_and_group_recovery.ipynb` covers profile agreement,
-  KO coverage, Matchado-style differential-KO recovery and label
-  randomizations, and Sun-style observed inference correlation with WGS
+  KO coverage, Matchado et al.-derived differential-KO recovery and label
+  randomizations, and Sun et al.-derived observed inference correlation with WGS
   abundance controls. It compares PICRUSt2, the basic-MLP adaptation, and
   Tax4Fun2.
 - `02_exploratory_effect_ranking_and_deciles.ipynb` covers WGS-versus-predicted
@@ -94,4 +112,5 @@ recovery, per_ko = matchado_differential_abundance_metrics(
 ```
 
 Input requirements, metric definitions, plot functions, and validation results
-are documented in `docs/INPUT_FORMATS.md` and `docs/METRICS_LIBRARY.md`.
+are documented in `docs/INPUT_FORMATS.md`, `docs/METRICS_LIBRARY.md`, and
+`docs/REFERENCES.md`.

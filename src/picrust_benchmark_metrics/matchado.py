@@ -1,9 +1,15 @@
-"""Matchado-style WGS-referenced differential-abundance metrics.
+"""Matchado-derived WGS-referenced differential-abundance metrics.
 
-This retains the legacy project's published-method implementation: unadjusted
+Published source: Matchado et al. (2024), *Microbial Genomics* 10:001203,
+doi:10.1099/mgen.0.001203.
+
+This retains the legacy project's paper-derived implementation: unadjusted
 two-sided Mann--Whitney tests, a shared 5% prevalence surface, WGS significant
 KOs as the reference set, and prediction-label permutations as the control.
-It is intentionally separate from the project's BH-selected effect extensions.
+Precision, recall, F1, and the 20-round control are credited to that paper.
+AUROC/AUPR and the BH-selected functions are project extensions and are not
+attributed to Matchado et al. The single surface shared across every supplied
+method is a repository operational choice for direct method comparison.
 """
 
 from __future__ import annotations
@@ -74,10 +80,13 @@ def matchado_differential_abundance_metrics(
     n_permutations: int = 20,
     random_seed: int = 20260821,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Return Matchado-style observed-vs-label-permuted metrics and KO tests.
+    """Return Matchado-derived observed-vs-label-permuted metrics and KO tests.
 
     The WGS test is fixed. For each prediction method, only the phenotype
     labels attached to that prediction are permuted for the requested rounds.
+    Precision, recall, F1, and label randomization follow Matchado et al.; the
+    returned AUROC/AUPR rows and all-method shared KO surface are this library's
+    additions.
     """
     if not predictions or n_permutations < 1:
         raise ValueError("at least one prediction and one permutation are required")
@@ -129,7 +138,10 @@ def matchado_differential_abundance_metrics(
                          "n_permutations": n_permutations, "n_tested_kos": len(tested),
                          "n_wgs_significant": len(reference), "n_prediction_significant": int((pred_tests.pvalue < alpha).sum()),
                          "tp": observed["tp"], "fp": observed["fp"], "fn": observed["fn"],
-                         "randomization_method": "matchado_2024_prediction_phenotype_label_permutation"})
+                         "randomization_method": "matchado_2024_prediction_phenotype_label_permutation",
+                         "published_source": "Matchado et al. 2024",
+                         "published_source_doi": "10.1099/mgen.0.001203",
+                         "metric_provenance": "published_matchado" if metric in {"precision", "recall", "f1"} else "project_ranking_extension"})
         merged = wgs_tests.merge(pred_tests, on="KO", suffixes=("_wgs", "_prediction"), validate="one_to_one")
         merged.insert(0, "prediction_method", method)
         ko_tables.append(merged)

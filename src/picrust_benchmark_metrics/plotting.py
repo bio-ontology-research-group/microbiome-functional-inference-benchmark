@@ -38,7 +38,7 @@ def plot_profile_study_panels(
     colors: Mapping[str, str] | None = None,
     ncols: int = 7,
 ):
-    """PICRUSt2-style sample-correlation panels for every study stratum."""
+    """PICRUSt2 Fig. 2a-inspired panels for every study stratum."""
     palette = _palette(methods, colors)
     study_order = registry.dataset.astype(str).tolist()
     nrows = math.ceil(len(study_order) / ncols)
@@ -140,7 +140,7 @@ def plot_metric_row_grid(
     colors=None,
     title: str = "Differential-KO recovery",
 ):
-    """Matchado-style metric rows with one study per column."""
+    """Matchado Fig. 6-inspired metric rows with one study per column."""
     palette = _palette(methods, colors)
     fig, axes = plt.subplots(len(metric_order), len(study_order),
                              figsize=(2.5 * len(study_order), 2.65 * len(metric_order)),
@@ -170,7 +170,7 @@ def plot_matchado_randomization_dumbbells(
     *,
     metric_order: Sequence[str] = ("f1", "precision", "recall"),
 ):
-    """Matchado-style original-versus-label-randomization dumbbells."""
+    """Matchado Fig. 7-inspired observed-versus-randomized dumbbells."""
     fig, axes = plt.subplots(len(metric_order), len(study_order),
                              figsize=(2.5 * len(study_order), 2.65 * len(metric_order)),
                              sharex=True, sharey=True, squeeze=False)
@@ -203,7 +203,7 @@ def plot_sun_observed_controls(
     study_order: Sequence[str],
     methods: Sequence[str],
 ):
-    """Sun-style observed inference correlations over abundance-shuffle controls."""
+    """Sun Fig. 4-inspired observed correlations over abundance controls."""
     fig, axes = plt.subplots(len(methods), 1, figsize=(17, 3.6 * len(methods)), sharex=True, sharey=True, squeeze=False)
     for ax, method in zip(axes.flat, methods):
         control = controls[controls.prediction_method.eq(method)]
@@ -223,7 +223,7 @@ def plot_sun_observed_controls(
     fig.legend(handles=[Line2D([0], [0], marker="o", color="none", markerfacecolor="#F13B35", label="observed"),
                         Line2D([0], [0], marker="o", color="none", markerfacecolor="#1646FF", label="WGS-abundance controls")],
                loc="upper right", bbox_to_anchor=(.98, .98), frameon=False)
-    fig.suptitle("Sun-style inference correlation: observed versus WGS-abundance controls", y=.995)
+    fig.suptitle("Sun et al.-derived inference correlation: observed versus WGS-abundance controls", y=.995)
     fig.tight_layout(rect=(0, 0, 1, .975))
     return fig, axes
 

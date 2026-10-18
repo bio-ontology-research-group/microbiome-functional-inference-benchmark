@@ -20,6 +20,10 @@ def test_matchado_metrics_return_published_metric_family():
     labels = pd.Series(["A", "A", "A", "B", "B", "B"], index=truth.index)
     scores, tests = matchado_differential_abundance_metrics(truth, {"PICRUSt2": pred}, labels, group_a="A", group_b="B", n_permutations=3)
     assert set(scores.metric) == {"precision", "recall", "f1", "auroc", "aupr"}
+    assert set(scores.published_source) == {"Matchado et al. 2024"}
+    assert set(scores.published_source_doi) == {"10.1099/mgen.0.001203"}
+    assert set(scores.loc[scores.metric.isin(["precision", "recall", "f1"]), "metric_provenance"]) == {"published_matchado"}
+    assert set(scores.loc[scores.metric.isin(["auroc", "aupr"]), "metric_provenance"]) == {"project_ranking_extension"}
     assert len(tests) == 3 and set(tests.prediction_method) == {"PICRUSt2"}
 
 

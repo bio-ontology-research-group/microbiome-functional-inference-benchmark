@@ -1,7 +1,7 @@
 # Scripts
 
-- `replay_bundled_group_metrics.py` reruns the profile, Matchado-style, and
-  Sun-style calculations from the processed files committed under
+- `replay_bundled_group_metrics.py` reruns the profile, Matchado et al.-derived,
+  and Sun et al.-derived calculations from the processed files committed under
   `data/studies/`. This is the script used by Notebook 1.
 - `build_benchmark_notebooks.py` generates the two notebooks from their
   version-controlled source cells.

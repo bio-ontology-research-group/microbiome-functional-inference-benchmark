@@ -1,4 +1,8 @@
-"""Sun-style signed-inference correlation and WGS abundance control."""
+"""Sun-derived signed-inference correlation and WGS abundance control.
+
+Published source: Sun, Jones & Fodor (2020), *Microbiome* 8:46,
+doi:10.1186/s40168-020-00815-y.
+"""
 
 from __future__ import annotations
 
@@ -28,7 +32,7 @@ def permute_ko_abundances_across_samples(
 def sun_signed_wilcoxon_by_ko(
     matrix: pd.DataFrame, labels: pd.Series, group_a: str, group_b: str
 ) -> pd.DataFrame:
-    """Sun's log10(p) times mean-difference-sign KO statistic."""
+    """Sun et al.'s log10(p) times mean-difference-sign KO statistic."""
     result = wilcoxon_rank_sum_by_ko(matrix, labels, group_a, group_b)
     fixed = labels.reindex(matrix.index).astype(str)
     mean_difference = (
@@ -61,7 +65,7 @@ def sun_inference_correlation_abundance_randomization(
     n_randomizations: int = 100,
     random_seed: int = 20260901,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Reproduce Sun's signed-inference correlation and WGS-shuffle control.
+    """Reimplement Sun et al.'s signed-inference correlation and control.
 
     This follows the published descriptive control: each WGS KO is shuffled
     over samples, labels stay fixed, and the prediction is never shuffled.
@@ -130,6 +134,7 @@ def sun_inference_correlation_abundance_randomization(
                           "randomization_min": null.min(), "randomization_max": null.max(),
                           "n_randomizations": int(n_randomizations), "randomization_seed": int(random_seed),
                           "randomization_method": "sun_2020_independent_wgs_ko_abundance_permutation",
-                          "published_source": "Sun et al. 2020", "randomized_profile": "WGS",
+                          "published_source": "Sun et al. 2020",
+                          "published_source_doi": "10.1186/s40168-020-00815-y", "randomized_profile": "WGS",
                           "fixed_profile": "prediction", "labels_permuted": False})
     return pd.DataFrame(summaries), randomizations, pd.concat(detail, ignore_index=True)

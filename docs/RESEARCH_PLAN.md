@@ -28,7 +28,7 @@ The inventory and library must cover three families:
 1. **PICRUSt-style profile metrics.** Identify every currently used
    PICRUSt/PICRUSt2 comparison metric and its input, normalization, direction,
    aggregation level, and edge-case behavior from the source notebooks.
-2. **Matchado-style biological-group metrics.** Reproduce the reported
+2. **Matchado et al.-derived biological-group metrics.** Reproduce the reported
    per-KO testing/classification quantities exactly, including the WGS-defined
    reference labels and F1, precision, and recall semantics.
 3. **Project extensions.** Keep these separate from published-method metrics:
@@ -64,6 +64,12 @@ two-method PICRUSt2/adaptation surface.
   reported group-effect classification uses per-KO Wilcoxon testing and
   WGS-significant KOs as reference labels. The effect-size relationship is a
   project extension, not attributed to Matchado.
+- Sun et al. (2020) compared PICRUSt, PICRUSt2, and the original Tax4Fun. The
+  repository applies Sun's metric definition to Tax4Fun2 and labels this as a
+  new application rather than an exact method-for-method reproduction.
+- Directional ROC/PR, AUROC/average precision, and prediction-ranked decile
+  composition are project extensions. They are not attributed to Sun,
+  Matchado, PICRUSt, PICRUSt2, or Tax4Fun2.
 - Metric formalization later must distinguish explicit nulls, effect size,
   sign versus magnitude, shotgun split-half ceiling, and differential-abundance
   method sensitivity.
@@ -72,7 +78,7 @@ two-method PICRUSt2/adaptation surface.
 
 ## Working sequence
 
-1. Inventory the paper-faithful PICRUSt2, Matchado, and Sun metric definitions.
+1. Inventory the published PICRUSt2, Matchado, and Sun metric definitions.
 2. Replay the complete accepted profile benchmark for PICRUSt2, the basic-MLP adaptation, and Tax4Fun2.
 3. Replay the frozen 10-study corrected effect/ranking/decile surface.
 4. Keep unavailable reference surfaces explicit, especially the accepted-surface Sun randomization table.
