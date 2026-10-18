@@ -27,6 +27,15 @@ and for the 26-stratum overview. The full profile overview contains **11
 benchmark strata plus 15 expansion strata**. The ten matrix bundles are the
 subset with accepted biological-group labels.
 
+The reference directory contains results from two intentionally different
+differential-KO definitions. `matchado_label_metric_results_long.tsv` uses the
+Matchado-derived unadjusted *p* < 0.05 rule. `classification_summary.tsv` and
+the effect/ranking/decile tables use the project's BH-adjusted WGS reference
+(*q* < 0.05 for the frozen selection; the ranking/decile classification helper
+uses *q* ≤ 0.05). These result families are not interchangeable. The BH version
+was introduced to address simultaneous testing across thousands of KOs and to
+hold one WGS-defined reference family fixed across methods.
+
 `manifest.tsv` records the byte size and SHA-256 digest of every distributed
 file. `source_artifact_manifest.tsv` records the frozen source artifacts used
 by the maintainer build script. Paths are relative to the separate source

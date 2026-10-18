@@ -183,7 +183,11 @@ def replay_published_group_metrics(
     matchado_permutations: int = 20,
     sun_randomizations: int = 100,
 ):
-    """Run profile plus published-definition Matchado and Sun metrics."""
+    """Run profile plus paper-derived Matchado and Sun metrics.
+
+    The Matchado replay uses unadjusted p < 0.05; it is distinct from the
+    project's BH q < 0.05 recovery extension.
+    """
     from picrust_benchmark_metrics import (
         matchado_differential_abundance_metrics,
         samplewise_spearman_on_universe,

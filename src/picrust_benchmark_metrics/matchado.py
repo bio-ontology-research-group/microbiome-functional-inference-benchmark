@@ -86,7 +86,8 @@ def matchado_differential_abundance_metrics(
     labels attached to that prediction are permuted for the requested rounds.
     Precision, recall, F1, and label randomization follow Matchado et al.; the
     returned AUROC/AUPR rows and all-method shared KO surface are this library's
-    additions.
+    additions. Significance is the published unadjusted ``p < alpha`` rule;
+    this function does not apply BH correction.
     """
     if not predictions or n_permutations < 1:
         raise ValueError("at least one prediction and one permutation are required")
@@ -141,6 +142,8 @@ def matchado_differential_abundance_metrics(
                          "randomization_method": "matchado_2024_prediction_phenotype_label_permutation",
                          "published_source": "Matchado et al. 2024",
                          "published_source_doi": "10.1099/mgen.0.001203",
+                         "multiple_testing_method": "none_unadjusted_pvalue",
+                         "significance_rule": f"pvalue < {alpha:g}",
                          "metric_provenance": "published_matchado" if metric in {"precision", "recall", "f1"} else "project_ranking_extension"})
         merged = wgs_tests.merge(pred_tests, on="KO", suffixes=("_wgs", "_prediction"), validate="one_to_one")
         merged.insert(0, "prediction_method", method)
@@ -217,7 +220,11 @@ def matchado_bh_shared_wgs_reference_metrics(
     Samples are normalized over every source column before filtering. The
     family is KOs detected in at least ``prevalence_threshold`` of labeled WGS
     samples. Prediction KOs absent from that fixed family are zero-filled;
-    there is no prediction-side prevalence filter.
+    there is no prediction-side prevalence filter. WGS and each prediction are
+    BH-adjusted separately across the complete fixed family and use
+    ``q < q_threshold``. BH is used to limit the expected false-discovery
+    proportion across the simultaneous KO tests. This is a project modification
+    and is not Matchado et al.'s unadjusted ``p < 0.05`` metric.
     """
     if not predictions:
         raise ValueError("at least one prediction is required")
@@ -250,7 +257,11 @@ def matchado_bh_shared_wgs_reference_metrics(
                           "n_wgs_significant": int(wgs_positive.sum()),
                           "n_prediction_significant": int(pred_positive.sum()),
                           "prevalence_threshold": prevalence_threshold, "q_threshold": q_threshold,
-                          "ko_family_policy": "wgs_only_prevalence_then_prediction_zero_fill"})
+                          "ko_family_policy": "wgs_only_prevalence_then_prediction_zero_fill",
+                          "multiple_testing_method": "benjamini_hochberg_separately_within_wgs_and_each_prediction",
+                          "significance_rule": f"bh_qvalue < {q_threshold:g}",
+                          "metric_provenance": "project_bh_extension_not_matchado_raw_p",
+                          "modification_reason": "limit_false_discoveries_across_many_kos_and_fix_one_wgs_reference_family_across_methods"})
         merged = wgs_tests.merge(pred_tests, on="KO", suffixes=("_wgs", "_prediction"), validate="one_to_one")
         merged.insert(0, "prediction_method", method)
         merged["wgs_positive"] = wgs_positive

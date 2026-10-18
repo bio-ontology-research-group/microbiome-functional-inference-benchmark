@@ -64,6 +64,11 @@ two-method PICRUSt2/adaptation surface.
   reported group-effect classification uses per-KO Wilcoxon testing and
   WGS-significant KOs as reference labels. The effect-size relationship is a
   project extension, not attributed to Matchado.
+- The Matchado-derived replay retains unadjusted *p* < 0.05. The separate
+  project recovery analysis uses BH *q* < 0.05 over one WGS-defined family to
+  address simultaneous KO testing and keep a common reference across methods.
+  These outputs must remain separately named and must not be treated as the
+  same metric.
 - Sun et al. (2020) compared PICRUSt, PICRUSt2, and the original Tax4Fun. The
   repository applies Sun's metric definition to Tax4Fun2 and labels this as a
   new application rather than an exact method-for-method reproduction.

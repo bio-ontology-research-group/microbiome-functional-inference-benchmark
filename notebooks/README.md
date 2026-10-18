@@ -41,3 +41,10 @@ the notebook applies their metric definition to the current Tax4Fun2
 predictions. Matchado et al. (2024) did include Tax4Fun2. Figure layouts marked
 “inspired by” use the cited paper's visual grammar on this repository's data
 and are not presented as copies of the published figures.
+
+Notebook 1's Matchado-derived replay uses the paper's unadjusted *p* < 0.05
+rule. Notebook 2's recovery, effect, ROC/PR, and decile targets instead use the
+project's BH-adjusted WGS reference. BH was added to address simultaneous
+testing across thousands of KOs and the family was fixed from WGS so every
+method is judged against the same target. The notebook labels these outputs as
+a project extension; they are not reported as the original Matchado metric.

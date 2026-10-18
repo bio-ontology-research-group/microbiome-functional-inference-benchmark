@@ -22,6 +22,8 @@ def test_matchado_metrics_return_published_metric_family():
     assert set(scores.metric) == {"precision", "recall", "f1", "auroc", "aupr"}
     assert set(scores.published_source) == {"Matchado et al. 2024"}
     assert set(scores.published_source_doi) == {"10.1099/mgen.0.001203"}
+    assert set(scores.multiple_testing_method) == {"none_unadjusted_pvalue"}
+    assert set(scores.significance_rule) == {"pvalue < 0.05"}
     assert set(scores.loc[scores.metric.isin(["precision", "recall", "f1"]), "metric_provenance"]) == {"published_matchado"}
     assert set(scores.loc[scores.metric.isin(["auroc", "aupr"]), "metric_provenance"]) == {"project_ranking_extension"}
     assert len(tests) == 3 and set(tests.prediction_method) == {"PICRUSt2"}
@@ -46,6 +48,9 @@ def test_shared_wgs_family_zero_fills_missing_prediction_ko():
         truth, {"method": prediction}, labels, group_a="A", group_b="B"
     )
     assert summary.loc[0, "n_tested_kos"] == 2
+    assert summary.loc[0, "multiple_testing_method"] == "benjamini_hochberg_separately_within_wgs_and_each_prediction"
+    assert summary.loc[0, "significance_rule"] == "bh_qvalue < 0.05"
+    assert summary.loc[0, "metric_provenance"] == "project_bh_extension_not_matchado_raw_p"
     missing = detail.set_index("KO").loc["K2"]
     assert missing["pvalue_prediction"] == 1
     assert missing["test_method_prediction"] == "degenerate_all_identical_p1_convention"

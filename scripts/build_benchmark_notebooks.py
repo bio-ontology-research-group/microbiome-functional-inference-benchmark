@@ -109,6 +109,19 @@ nb1 = notebook([
     they are not copies of the published figures. See `docs/REFERENCES.md` for the full bibliography and
     metric-ownership map.
     '''),
+    md('''
+    ### Published rule versus our modification
+
+    Two differential-KO recovery definitions appear in this repository and must not be confused:
+
+    | Result | Significance rule | What we changed and why |
+    | --- | --- | --- |
+    | **Matchado-derived replay in this notebook** | Unadjusted two-sided rank-sum *p* < 0.05, with no multiple-testing correction, as in Matchado et al. (2024) | We use one KO intersection and 5% prevalence surface shared across WGS and every supplied method so methods are compared on the same KOs. This surface choice is ours. |
+    | **Project BH extension in Notebook 2** | Benjamini-Hochberg *q* < 0.05, calculated separately for WGS and each prediction over one fixed KO family | We added BH because thousands of KOs are tested simultaneously and we want to limit the expected false-discovery proportion. We define the family from WGS and zero-fill missing prediction KOs so every method has the same reference target. This is not the original Matchado metric. |
+
+    Therefore the raw-*p* and BH precision/recall/F1 values answer different questions and are not
+    directly comparable.
+    '''),
     code(COMMON + r'''
 METHODS = ["PICRUSt2", "PICRUSt2 + adaptation", "Tax4Fun2"]
 '''),
@@ -173,6 +186,8 @@ assert published_sun.groupby("prediction_method").dataset.nunique().eq(10).all()
 assert sun_randomizations.groupby(["dataset", "prediction_method"]).size().eq(100).all()
 assert set(published_matchado.published_source_doi) == {"10.1099/mgen.0.001203"}
 assert set(published_sun.published_source_doi) == {"10.1186/s40168-020-00815-y"}
+assert set(published_matchado.multiple_testing_method) == {"none_unadjusted_pvalue"}
+assert set(published_matchado.significance_rule) == {"pvalue < 0.05"}
 print(f"Local replay used {len(raw_sources)} bundled processed studies")
 display(tax4fun_coverage.loc[tax4fun_coverage.n_zero_total_samples.gt(0),
                              ["dataset", "n_samples", "n_zero_total_samples"]])
@@ -273,8 +288,9 @@ fig, ax = plot_ko_coverage(coverage, METHODS, colors=COLORS)
     md('''
     ## Matchado et al. (2024) differential-KO recovery
 
-    The library implements both (a) a paper-derived raw-*p* family—low-prevalence filtering, unadjusted
-    two-sided rank-sum p < 0.05, precision/recall/F1, prediction-label permutations—and (b) the later
+    The library implements both (a) a paper-derived raw-*p* family—low-prevalence filtering, **unadjusted
+    two-sided rank-sum p < 0.05 with no multiple-testing correction**, precision/recall/F1,
+    prediction-label permutations—and (b) the later
     project extension using a WGS-only family with BH q < 0.05 and zero-fill. For direct comparison, the
     library fixes one KO intersection and 5% prevalence surface across WGS and all three supplied methods;
     this all-method surface is a repository choice. The completed paper-derived
@@ -370,7 +386,7 @@ fig, axes = plot_sun_observed_controls(
 metric_contract = pd.DataFrame([
     {"family": "KO profile", "studies": 26, "methods": 3, "reference": "accepted two-method table + completed 19-study Tax4Fun2 table", "validation": f"two-method error <=1e-12; Tax4Fun2 max error {tax4fun_cmp.absolute_error.max():.3g} on 1,218 samples"},
     {"family": "Matchado-derived raw-p replay", "studies": 10, "methods": 3, "reference": "completed legacy PICRUSt2/Tax4Fun2 rows where labels match", "validation": f"{len(legacy_cmp)} label-matched rows are surface-non-equivalent (max difference {legacy_cmp.absolute_error.max():.3g}); full three-method reference unavailable"},
-    {"family": "Matchado BH extension", "studies": 10, "methods": 2, "reference": "accepted unified5 tables", "validation": "retained in Notebook 02's fixed two-method scope"},
+    {"family": "Project BH extension (not Matchado raw-p)", "studies": 10, "methods": 2, "reference": "accepted unified5 tables", "validation": "retained in Notebook 02's fixed two-method scope"},
     {"family": "Sun inference correlation", "studies": 10, "methods": 3, "reference": "none on exact accepted surface", "validation": "full 100-randomization replay complete; comparison unavailable"},
 ])
 display(metric_contract)
@@ -399,6 +415,25 @@ nb2 = notebook([
     section uses published differential-KO set-recovery precedent, but its WGS-only family, BH correction,
     and zero-fill policy are repository-specific. Complete citations and ownership notes are in
     `docs/REFERENCES.md`.
+    '''),
+    md('''
+    ### Exact project modification
+
+    Matchado et al. used unadjusted *p* < 0.05 for their differential-KO recovery metric. This notebook
+    does **not** reuse that significance rule. It uses the following project definition:
+
+    1. Within each study, define one KO family from KOs detected in at least 5% of labeled WGS samples.
+    2. Run one two-sided rank-sum test per KO and apply Benjamini-Hochberg across the complete WGS family.
+    3. Define the WGS reference-positive set with BH *q* < 0.05.
+    4. Normalize each prediction over its complete source profile, align it to the same WGS family, and
+       score absent prediction KOs as zero; do not apply a prediction-side prevalence filter.
+    5. Test and BH-adjust each prediction over that same family, then compute precision, recall, and F1
+       against the fixed WGS positives.
+
+    **Why:** thousands of KOs are tested simultaneously, so BH limits the expected false-discovery
+    proportion among selected KOs. Fixing the family from WGS prevents a method from changing the target
+    simply by omitting KOs. These BH results are a project extension and must not be reported as Matchado's
+    original raw-*p* metric.
     '''),
     code(COMMON + r'''
 from picrust_benchmark_metrics import directional_ranking_curves, decile_outcome_composition
@@ -432,7 +467,19 @@ provenance_02 = pd.DataFrame({"path": [p.relative_to(ROOT).as_posix() for p in i
                               "sha256": [sha256(p) for p in inputs_02]})
 assert cohort.dataset.nunique() == selection.dataset.nunique() == assignments.dataset.nunique() == 10
 assert assignments.groupby(["dataset", "prediction_method"]).ngroups == 20
+assert int((assignments.wgs_bh_qvalue == 0.05).sum()) == 0
+threshold_contract = pd.DataFrame([
+    {"analysis": "effect correlation", "WGS target rule": "BH q < 0.05", "prediction significance used": False,
+     "status": "project extension"},
+    {"analysis": "directional ROC/PR", "WGS target rule": "BH q <= 0.05 plus effect sign", "prediction significance used": False,
+     "status": "project extension"},
+    {"analysis": "decile composition", "WGS target rule": "BH q <= 0.05 plus effect sign", "prediction significance used": False,
+     "status": "project extension"},
+    {"analysis": "BH set recovery", "WGS target rule": "BH q < 0.05", "prediction significance used": True,
+     "status": "project extension; not Matchado raw-p"},
+])
 display(cohort[["dataset", "group_a", "group_b", "n_group_a", "n_group_b", "n_eligible_kos"]])
+display(threshold_contract)
 display(provenance_02)
 '''),
     md('''
@@ -535,10 +582,13 @@ fig, axes = plot_directional_roc_grid(
     md('''
     ## Project BH recovery extension
 
-    This project implementation combines the differential-KO set-recovery precedent in Douglas et al.
-    (2020) and Matchado et al. (2024) with a WGS-only detectable family that is tested once, BH-corrected
-    once, and shared by both methods. Its surface rules differ from both papers. The plot uses the completed
-    400-permutation summary; it is not a new randomization analysis in this notebook.
+    **This is not Matchado's unadjusted p < 0.05 metric.** This project implementation combines the
+    differential-KO set-recovery precedent in Douglas et al. (2020) and Matchado et al. (2024) with a
+    WGS-only detectable family. WGS and each prediction are BH-adjusted separately over that same family;
+    positives require q < 0.05. The family is shared by both methods, and absent prediction KOs are scored
+    as zero. We chose BH to limit the expected false-discovery proportion across the thousands of
+    simultaneous KO tests. The plot uses the completed 400-permutation summary; it is not a new
+    randomization analysis in this notebook.
     '''),
     code(r'''
 assert class_ref.groupby(["dataset", "prediction_method"]).ngroups == 20
@@ -607,8 +657,10 @@ fig.tight_layout()
     All feasible families agree numerically with completed reference tables at 1e−12 absolute tolerance.
     The source provides no completed accepted-surface Sun randomization table, so that comparison remains
     explicitly unavailable rather than inferred. Remaining scientific choices include whether to treat the
-    23 outer groups or 26 strata as the reporting unit, whether q < 0.05 or q ≤ 0.05 is desired (the frozen
-    accepted selection is retained), and whether future work should average multiple adaptation seeds.
+    23 outer groups or 26 strata as the reporting unit and whether future work should average multiple
+    adaptation seeds. The frozen effect/BH recovery selection uses q < 0.05; directional ROC/PR and decile
+    classification use q ≤ 0.05. No frozen WGS q-value equals exactly 0.05, so this boundary difference
+    does not change any current result.
     '''),
     code(r'''
 validation = pd.DataFrame([

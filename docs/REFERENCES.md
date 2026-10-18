@@ -22,6 +22,21 @@ The figure functions reproduce useful visual grammars from the papers where
 stated, but apply them to this repository's studies and methods. They are not
 copies of the published figures.
 
+## Original definitions versus repository modifications
+
+The two differential-KO recovery analyses are intentionally separate:
+
+| Analysis | Significance definition | Repository modification | Reason and interpretation |
+| --- | --- | --- | --- |
+| Matchado-derived replay in Notebook 1 | Two-sided rank-sum **unadjusted *p* < 0.05**, matching Matchado et al. (2024); no multiple-testing adjustment | One KO intersection and 5% prevalence surface is shared across WGS and all supplied prediction methods, rather than allowing the evaluated surface to vary by method | Keeps direct method comparisons on the same KOs. Because the surface and studies differ from the paper, this is a reimplementation of its metric definition, not a numerical reproduction of the published paper values. |
+| Project BH recovery in Notebook 2 | Rank-sum *p* values are adjusted with Benjamini-Hochberg separately for WGS and each prediction over the same fixed family; positive means **BH *q* < 0.05** | The KO family is defined only from KOs detected in at least 5% of labeled WGS samples. Predictions are normalized over their complete source profile, aligned to that WGS family, and missing prediction KOs are scored as zero. There is no prediction-side prevalence filter. | BH was introduced because thousands of KOs are tested simultaneously; it limits the expected false-discovery proportion among selected KOs. The WGS-only family prevents each method from changing the reference target. This is a project metric and its precision/recall/F1 must not be compared as though it were Matchado's raw-*p* metric. |
+| Effect-size correlations in Notebook 2 | KOs are selected from the frozen WGS family with **BH *q* < 0.05** before WGS-versus-prediction effect correlation | Uses signed rank-biserial effect sizes, which are not part of the cited recovery metric | Focuses the relationship on WGS-supported group differences. This is a project-developed diagnostic. |
+| Directional ROC/PR and decile composition in Notebook 2 | WGS targets use BH *q* ≤ 0.05 plus the sign of the WGS effect; prediction effects provide a continuous ranking | Predictions are not thresholded by prediction *p* or *q* for these ranking analyses | Measures whether predicted effects rank WGS-supported positive or negative outcomes. This is a project-developed diagnostic, not a paper metric. |
+
+The frozen tables contain no WGS BH value exactly equal to 0.05, so the retained
+`<` versus `≤` boundary difference does not change the current results. It is
+still stated explicitly because it is part of the computational contract.
+
 ## Method citations
 
 The benchmark examples evaluate these inference methods or variants:

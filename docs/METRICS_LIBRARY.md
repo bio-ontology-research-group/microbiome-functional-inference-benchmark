@@ -16,6 +16,20 @@ not contain model training, raw-data processing, or study-selection code.
 | Directional ROC/PR | `directional_ranking_curves` | Separate positive and negative WGS targets, exact sklearn ROC and PR points, average precision, and ROC-AUC. |
 | Decile outcome composition | `decile_outcome_composition` | Ascending predicted-effect ranking, lexical KO tie-breaks, equal-count bins, and positive/negative/nonsignificant WGS outcome shares. |
 
+## Significance rules and modifications
+
+| Function or result | Exact rule | Why it exists | Attribution status |
+| --- | --- | --- | --- |
+| `matchado_differential_abundance_metrics` precision/recall/F1 | Unadjusted two-sided rank-sum *p* < `alpha` (default 0.05); no BH correction | Replays the published Matchado threshold for comparison with that metric family | Published definition, with this library's all-method shared KO surface documented separately |
+| `matchado_bh_shared_wgs_reference_metrics` | BH-adjust each complete study/profile family; WGS and prediction positives require *q* < `q_threshold` (default 0.05) | Limits the expected false-discovery proportion across simultaneous KO tests and fixes the same WGS-derived target family for every method | Project modification; not the Matchado raw-*p* metric |
+| Notebook 2 effect relationship | Select frozen WGS KOs with BH *q* < 0.05 | Restricts effect concordance to WGS-supported group differences | Project extension |
+| `directional_ranking_curves` and `decile_outcome_composition` | WGS class uses BH *q* ≤ 0.05 and WGS effect sign; prediction effect remains continuous | Defines directional observed targets while evaluating ranking rather than a prediction significance cutoff | Project extension |
+
+Raw-*p* recovery scores and BH recovery scores answer different questions and
+must not be pooled or interpreted as interchangeable. In the current frozen
+tables no WGS *q* value equals exactly 0.05, so the `<`/`≤` boundary distinction
+does not affect the displayed results.
+
 ## Plot functions
 
 | Plot | Function |

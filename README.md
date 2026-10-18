@@ -39,6 +39,25 @@ analyses are extensions developed in this project. The complete ownership map,
 method citations, and distinctions between paper definitions and repository
 implementation choices are in [docs/REFERENCES.md](docs/REFERENCES.md).
 
+### Important: raw *p* and BH results are different analyses
+
+The repository deliberately provides both versions, and their scores should
+not be treated as the same metric:
+
+- **Published Matchado replay:** significant KOs use unadjusted *p* < 0.05,
+  following Matchado et al. (2024). No multiple-testing correction is applied.
+- **Project BH extension:** significant KOs use Benjamini-Hochberg-adjusted
+  *q* < 0.05 within each study's fixed KO family. We introduced this version to
+  limit the expected false-discovery proportion when thousands of KOs are
+  tested simultaneously and to give every prediction method the same
+  WGS-defined reference family.
+
+The BH extension also zero-fills prediction KOs absent from that WGS family and
+does not apply a prediction-side prevalence filter. These are project choices,
+not parts of the original Matchado metric. Consequently, raw-*p* and BH
+precision, recall, and F1 values are labeled separately and are not directly
+comparable.
+
 ## Install and run
 
 ```bash
