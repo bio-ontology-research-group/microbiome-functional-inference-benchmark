@@ -1,0 +1,13 @@
+contrast_id	prediction_method	paper_metric_status	n_zero_total_samples	zero_total_sample_ids	ko_surface_policy
+control_han_river_upstream_vs_downstream	PICRUSt2	computed	0		WGS-and-one-method shared native KO surface
+control_han_river_upstream_vs_downstream	Tax4Fun2	computed	0		WGS-and-one-method shared native KO surface
+control_activated_sludge_disturbed_vs_stable	PICRUSt2	computed	0		WGS-and-one-method shared native KO surface
+control_activated_sludge_disturbed_vs_stable	Tax4Fun2	computed	0		WGS-and-one-method shared native KO surface
+control_topsoil_control_vs_warmed	PICRUSt2	computed	0		WGS-and-one-method shared native KO surface
+control_topsoil_control_vs_warmed	Tax4Fun2	computed	0		WGS-and-one-method shared native KO surface
+topsoil_biome_tundra_vs_temperate_grassland	PICRUSt2	computed	0		WGS-and-one-method shared native KO surface
+topsoil_biome_tundra_vs_temperate_grassland	Tax4Fun2	computed	0		WGS-and-one-method shared native KO surface
+olive_xylem_season1_FS17_vs_Kalamata	PICRUSt2	computed	0		WGS-and-one-method shared native KO surface
+olive_xylem_season1_FS17_vs_Kalamata	Tax4Fun2	unavailable_zero_total_on_pairwise_shared_ko_surface	2	Kal1-53;Kal1-65	WGS-and-one-method shared native KO surface
+olive_xylem_season2_FS17_vs_Kalamata	PICRUSt2	computed	0		WGS-and-one-method shared native KO surface
+olive_xylem_season2_FS17_vs_Kalamata	Tax4Fun2	computed	0		WGS-and-one-method shared native KO surface

@@ -1,0 +1,10 @@
+dataset	n_kos	p_sig_positive	p_sig_negative	p_any_significant
+control_han_river_upstream_vs_downstream	8393	0.023352793994995829	0.037292982247110688	0.060645776242106521
+control_activated_sludge_disturbed_vs_stable	5829	0.27723451706982327	0.23554640590152684	0.51278092297135014
+control_topsoil_control_vs_warmed	5593	0	0	0
+topsoil_biome_tundra_vs_temperate_grassland	6230	0.28491171749598715	0.38603531300160515	0.6709470304975923
+olive_xylem_season1_FS17_vs_Kalamata	90	0	0	0
+olive_xylem_season2_FS17_vs_Kalamata	636	0	0	0
+han_river_summer_vs_winter_site_paired	7789	0.20297855950699706	0.2747464372833483	0.47772499679034536
+empty_quarter_surface_vs_deep_site_paired	6575	0.069505703422053228	0.05520912547528517	0.1247148288973384
+empty_quarter_rhizosphere_vs_surface_site_paired	6999	0.08958422631804544	0.013716245177882554	0.10330047149592798

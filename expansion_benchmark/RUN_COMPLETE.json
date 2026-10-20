@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "table_2_2_interpretation": "black completed available expansion entries only",
+  "n_expansion_studies": 18,
+  "n_samples_total": 1096,
+  "methods": [
+    "PICRUSt2",
+    "Tax4Fun2"
+  ],
+  "training_performed": false,
+  "source_root": "/home/hernan_melmoth/Documents/phd_work/functions_inference_benchmark_EQ",
+  "all_screen_replays_pass": true,
+  "generated_files": 36
+}

@@ -1,0 +1,10 @@
+contrast_id	dataset	design	group_a	group_b	status	label_source	n_group_a	n_group_b	n_pairs
+control_han_river_upstream_vs_downstream	han_river	unpaired	upstream	downstream	accepted_control	frozen expansion validation label registry r2	30	15	
+control_activated_sludge_disturbed_vs_stable	activated_sludge	unpaired	disturbed	stable	accepted_control	frozen expansion validation label registry r2	16	17	
+control_topsoil_control_vs_warmed	topsoil	unpaired	control	warmed	accepted_control_zero_bh	frozen expansion validation label registry r2	5	6	
+topsoil_biome_tundra_vs_temperate_grassland	topsoil	unpaired	tundra	temperate grassland	computed_explicit_metadata	Stage-5 crosswalk environment_biome	11	7	
+olive_xylem_season1_FS17_vs_Kalamata	olive_xylem	unpaired	FS17	Kalamata	computed_provisional_zero_bh	documented sample-alias prefix; seasons separate	6	6	
+olive_xylem_season2_FS17_vs_Kalamata	olive_xylem	unpaired	FS17	Kalamata	computed_provisional_zero_bh	documented sample-alias prefix; seasons separate	6	6	
+han_river_summer_vs_winter_site_paired	han_river	paired	summer_Aug2016	winter_Feb2017	computed_provisional	Stage-5 tranche; month/season interpretation remains provisional	15	15	15
+empty_quarter_surface_vs_deep_site_paired	empty_quarter	paired	surface_soil	deep_soil	computed_provisional	sample suffix plus trip/site blocks; primary label table unavailable	45	45	45
+empty_quarter_rhizosphere_vs_surface_site_paired	empty_quarter	paired	rhizosphere	surface_soil	computed_provisional	sample suffix plus trip/site blocks; primary label table unavailable	47	47	47

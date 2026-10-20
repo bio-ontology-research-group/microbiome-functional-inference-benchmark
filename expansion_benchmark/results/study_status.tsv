@@ -1,0 +1,19 @@
+dataset	display_name	accession	empo_level_3	table_2_2_status	n_samples	wgs_kos	picrust2_kos	tax4fun2_kos	training_performed
+han_river	Han River	PRJNA530373	Water (non-saline)	completed_available_black_table_2_2	45	10625	9587	9011	False
+topsoil	Topsoil	PRJEB10725	Soil (non-saline)	completed_available_black_table_2_2	18	8525	9200	8700	False
+empty_quarter	Empty Quarter	project dataset	Soil (non-saline)	completed_available_black_table_2_2	343	12410	10543	8887	False
+osd_ocean	Ocean Sampling Day	PRJEB8682	Water (saline)	completed_available_black_table_2_2	60	6960	9073	8464	False
+bonneville_salt_flats	Bonneville Salt Flats	PRJNA522308	Hypersaline (saline)	completed_available_black_table_2_2	16	5689	7858	7134	False
+plastic_biofilm	Plastic biofilm	PRJNA1195827	Surface (saline)	completed_available_black_table_2_2	73	8067	8668	8188	False
+oral_plaque	Oral plaque	PRJEB98488	Animal proximal gut	completed_available_black_table_2_2	28	6097	7628	7331	False
+skin_ctcl	Human skin CTCL	PRJEB36953	Animal surface	completed_available_black_table_2_2	36	8050	8843	8714	False
+skin_A	Human skin A	PRJNA1162089	Animal surface	completed_available_black_table_2_2	202	11475	9418	8942	False
+skin_B	Human skin B	PRJNA471898	Animal surface	completed_available_black_table_2_2	44	7144	9418	8942	False
+olive_xylem	Olive xylem	PRJNA629675	Plant corpus	completed_available_black_table_2_2	24	1942	6535	6706	False
+activated_sludge	Activated sludge	PRJNA484416	EMPO leaf pending	completed_available_black_table_2_2	60	7469	9634	9098	False
+bioreactor	Engineered bioreactor	PRJEB36484	EMPO leaf pending	completed_available_black_table_2_2	9	4697	5626	6443	False
+emp500_nonsaline_sediment	EMP500 lake/stream sediment	PRJEB42019	Sediment (non-saline)	completed_available_black_table_2_2	37	8426	9995	9089	False
+emp500_saline_sediment	EMP500 marine sediment	PRJEB42019	Sediment (saline)	completed_available_black_table_2_2	64	8574	9667	8841	False
+emp500_shipworm	EMP500 shipworm tissue	PRJEB42019	Animal corpus	completed_available_black_table_2_2	14	8321	8773	8319	False
+emp500_pitcher_plant	EMP500 pitcher plant fluid	PRJEB42019	Plant surface	completed_available_black_table_2_2	13	8911	8089	8054	False
+emp500_lichen	EMP500 lichen thallus	PRJEB42019	Fungus corpus	completed_available_black_table_2_2	10	6004	8293	8125	False
