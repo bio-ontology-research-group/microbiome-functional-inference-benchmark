@@ -1,0 +1,18 @@
+contrast_id	dataset	design	group_a	group_b	status	n_group_a	n_group_b	n_pairs	provenance	source_project_id	empo_1	empo_2	empo_3
+benchmark_blueberry	blueberry	unpaired	Bulk	Rhizosphere	accepted	8	7		benchmark_source	benchmark_PICRUSt2_blueberry	Unknown	Contradictory	Unknown (contradictory)
+benchmark_cameroon	cameroon	unpaired	Entamoeba positive	Entamoeba negative	accepted	19	36		benchmark_source	benchmark_PICRUSt2_cameroon	Host-associated	Animal	Animal distal gut
+benchmark_hmp	hmp	unpaired	Gastrointestinal_tract	Oral	accepted	66	63		benchmark_source	benchmark_HMP	Host-associated	Animal	Animal distal gut; Animal surface
+benchmark_indian	indian	unpaired	Location 1	Location 2	accepted	51	55		benchmark_source	benchmark_PICRUSt2_indian	Host-associated	Animal	Animal distal gut
+benchmark_primate	primate	unpaired	New World	Old World	accepted	29	29		benchmark_source	benchmark_PICRUSt2_primate	Host-associated	Animal	Animal distal gut
+benchmark_matchado	matchado	unpaired	CRC	CTR	accepted	41	50		benchmark_source	benchmark_PRJEB6070	Host-associated	Animal	Animal distal gut
+benchmark_brooks_forward	brooks_forward	unpaired	BV	nonBV	accepted	4	26		benchmark_source	benchmark_PRJNA876771	Host-associated	Animal	Animal secretion
+benchmark_sun_human_kw	sun_human_kw	unpaired	rural	urban	accepted	20	20		benchmark_source	benchmark_PRJNA349463	Host-associated	Animal	Animal distal gut
+control_han_river_upstream_vs_downstream	han_river	unpaired	upstream	downstream	accepted_control	30	15		expansion	expansion_PRJNA530373	Free-living	Non-saline	Water (non-saline)
+control_activated_sludge_disturbed_vs_stable	activated_sludge	unpaired	disturbed	stable	accepted_control	16	17		expansion	expansion_PRJNA484416	Engineered	Not assigned	EMPO leaf pending
+control_topsoil_control_vs_warmed	topsoil	unpaired	control	warmed	accepted_control_zero_bh	5	6		expansion	expansion_PRJEB10725	Free-living	Non-saline	Soil (non-saline)
+topsoil_biome_tundra_vs_temperate_grassland	topsoil	unpaired	tundra	temperate grassland	computed_explicit_metadata	11	7		expansion	expansion_PRJEB10725	Free-living	Non-saline	Soil (non-saline)
+olive_xylem_season1_FS17_vs_Kalamata	olive_xylem	unpaired	FS17	Kalamata	computed_provisional_zero_bh	6	6		expansion	expansion_PRJNA629675	Host-associated	Plant	Plant corpus
+olive_xylem_season2_FS17_vs_Kalamata	olive_xylem	unpaired	FS17	Kalamata	computed_provisional_zero_bh	6	6		expansion	expansion_PRJNA629675	Host-associated	Plant	Plant corpus
+han_river_summer_vs_winter_site_paired	han_river	paired	summer_Aug2016	winter_Feb2017	computed_provisional	15	15	15.0	expansion	expansion_PRJNA530373	Free-living	Non-saline	Water (non-saline)
+empty_quarter_surface_vs_deep_site_paired	empty_quarter	paired	surface_soil	deep_soil	computed_provisional	45	45	45.0	expansion	expansion_project dataset	Free-living	Non-saline	Soil (non-saline)
+empty_quarter_rhizosphere_vs_surface_site_paired	empty_quarter	paired	rhizosphere	surface_soil	computed_provisional	47	47	47.0	expansion	expansion_project dataset	Free-living	Non-saline	Soil (non-saline)

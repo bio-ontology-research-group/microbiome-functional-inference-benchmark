@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "training_performed": false,
+  "methods": [
+    "PICRUSt2",
+    "Tax4Fun2"
+  ],
+  "paired_samples": 1717,
+  "benchmark_source_samples": 621,
+  "expansion_samples": 1096,
+  "unique_source_projects": 24,
+  "source_project_environment_scopes": 29,
+  "accepted_biological_contrasts": 17,
+  "profile_aggregation_policy": "equal weight per source-project x environment scope for environment macro summaries",
+  "blueberry_environment": "Unknown (contradictory), retained from frozen source annotation",
+  "benchmark_metric_recomputation": "project BH and Sun metrics rerun from repository compact processed bundles",
+  "source_trees_modified": false
+}

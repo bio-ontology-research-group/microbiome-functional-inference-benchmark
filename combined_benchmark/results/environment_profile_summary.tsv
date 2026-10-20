@@ -1,0 +1,15 @@
+empo_1	empo_2	method_label	n_source_project_environment_scopes	n_samples	median_scope_mean_spearman	q1_scope_mean_spearman	q3_scope_mean_spearman	mean_scope_mean_spearman	aggregation_policy
+Engineered	Not assigned	PICRUSt2	2	69	0.6698682176080272	0.6590167240238203	0.6807197111922341	0.6698682176080272	equal_weight_per_source_project_x_environment_scope
+Engineered	Not assigned	Tax4Fun2	2	69	0.6292325932202013	0.6247660118771727	0.6336991745632299	0.6292325932202013	equal_weight_per_source_project_x_environment_scope
+Free-living	Non-saline	PICRUSt2	4	443	0.6763899863157067	0.6515936666658921	0.68891648204743	0.6641201623976154	equal_weight_per_source_project_x_environment_scope
+Free-living	Non-saline	Tax4Fun2	4	443	0.6588956041233728	0.6125170509266895	0.6742494168724216	0.6278708636757383	equal_weight_per_source_project_x_environment_scope
+Free-living	Saline	PICRUSt2	5	219	0.5803833449871267	0.5617672991580082	0.6516337980564759	0.6207895913519815	equal_weight_per_source_project_x_environment_scope
+Free-living	Saline	Tax4Fun2	5	219	0.5631780374457291	0.5238333116618745	0.5953900698606569	0.5698732892004557	equal_weight_per_source_project_x_environment_scope
+Host-associated	Animal	PICRUSt2	14	917	0.6930319710093733	0.5516645172141044	0.7885705948745215	0.6575770308718821	equal_weight_per_source_project_x_environment_scope
+Host-associated	Animal	Tax4Fun2	14	917	0.6409361103674811	0.5384638700857146	0.6928652853307602	0.606199914546546	equal_weight_per_source_project_x_environment_scope
+Host-associated	Fungus	PICRUSt2	1	10	-0.14237107152676304	-0.14237107152676304	-0.14237107152676304	-0.14237107152676304	equal_weight_per_source_project_x_environment_scope
+Host-associated	Fungus	Tax4Fun2	1	10	-0.17879674931511472	-0.17879674931511472	-0.17879674931511472	-0.17879674931511472	equal_weight_per_source_project_x_environment_scope
+Host-associated	Plant	PICRUSt2	2	37	0.29792048527374604	0.1673230317315302	0.4285179388159619	0.29792048527374604	equal_weight_per_source_project_x_environment_scope
+Host-associated	Plant	Tax4Fun2	2	37	0.3165898159082737	0.22027412107042912	0.41290551074611825	0.3165898159082737	equal_weight_per_source_project_x_environment_scope
+Unknown	Contradictory	PICRUSt2	1	22	0.8232359257059776	0.8232359257059776	0.8232359257059776	0.8232359257059776	equal_weight_per_source_project_x_environment_scope
+Unknown	Contradictory	Tax4Fun2	1	22	0.7533863451536831	0.7533863451536831	0.7533863451536831	0.7533863451536831	equal_weight_per_source_project_x_environment_scope
